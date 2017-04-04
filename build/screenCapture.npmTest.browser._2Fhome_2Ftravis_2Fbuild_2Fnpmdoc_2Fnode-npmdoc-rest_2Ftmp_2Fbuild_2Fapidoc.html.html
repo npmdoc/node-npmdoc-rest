@@ -1,0 +1,3196 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/cujojs/rest#readme">rest (v2.0.0)</a>
+</h1>
+<h4>RESTful HTTP client library</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest">module rest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder">
+            function <span class="apidocSignatureSpan">rest.</span>UrlBuilder
+            <span class="apidocSignatureSpan">(template, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.chain">
+            function <span class="apidocSignatureSpan">rest.</span>chain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.getDefaultClient">
+            function <span class="apidocSignatureSpan">rest.</span>getDefaultClient
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.interceptor">
+            function <span class="apidocSignatureSpan">rest.</span>interceptor
+            <span class="apidocSignatureSpan">(handlers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.jsonp">
+            function <span class="apidocSignatureSpan">rest.</span>jsonp
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.node">
+            function <span class="apidocSignatureSpan">rest.</span>node
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.resetDefaultClient">
+            function <span class="apidocSignatureSpan">rest.</span>resetDefaultClient
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.responsePromise">
+            function <span class="apidocSignatureSpan">rest.</span>responsePromise
+            <span class="apidocSignatureSpan">(obj, callback, errback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.setDefaultClient">
+            function <span class="apidocSignatureSpan">rest.</span>setDefaultClient
+            <span class="apidocSignatureSpan">(client)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.setPlatformDefaultClient">
+            function <span class="apidocSignatureSpan">rest.</span>setPlatformDefaultClient
+            <span class="apidocSignatureSpan">(client)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.wrap">
+            function <span class="apidocSignatureSpan">rest.</span>wrap
+            <span class="apidocSignatureSpan">(interceptor, config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.xhr">
+            function <span class="apidocSignatureSpan">rest.</span>xhr
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>UrlBuilder.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>base64</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>find</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>pubsub</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>registry</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>rfc5988</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>uriEncoder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rest.</span>uriTemplate</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.UrlBuilder">module rest.UrlBuilder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.UrlBuilder">
+            function <span class="apidocSignatureSpan">rest.</span>UrlBuilder
+            <span class="apidocSignatureSpan">(template, params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.UrlBuilder.prototype">module rest.UrlBuilder.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.append">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>append
+            <span class="apidocSignatureSpan">(template, params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.build">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>build
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.fullyQualify">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>fullyQualify
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.isAbsolute">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isAbsolute
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.isCrossOrigin">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isCrossOrigin
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.isFullyQualified">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isFullyQualified
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.parts">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>parts
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.UrlBuilder.prototype.toString">
+            function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.base64">module rest.base64</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.base64.decode">
+            function <span class="apidocSignatureSpan">rest.base64.</span>decode
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.base64.encode">
+            function <span class="apidocSignatureSpan">rest.base64.</span>encode
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.find">module rest.find</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.find.findProperties">
+            function <span class="apidocSignatureSpan">rest.find.</span>findProperties
+            <span class="apidocSignatureSpan">(obj, prop, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.interceptor">module rest.interceptor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.interceptor.interceptor">
+            function <span class="apidocSignatureSpan">rest.</span>interceptor
+            <span class="apidocSignatureSpan">(handlers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.interceptor.ComplexRequest">
+            function <span class="apidocSignatureSpan">rest.interceptor.</span>ComplexRequest
+            <span class="apidocSignatureSpan">(properties)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.jsonp">module rest.jsonp</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.jsonp.jsonp">
+            function <span class="apidocSignatureSpan">rest.</span>jsonp
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.jsonp.chain">
+            function <span class="apidocSignatureSpan">rest.jsonp.</span>chain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.jsonp.wrap">
+            function <span class="apidocSignatureSpan">rest.jsonp.</span>wrap
+            <span class="apidocSignatureSpan">(interceptor, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.node">module rest.node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.node.node">
+            function <span class="apidocSignatureSpan">rest.</span>node
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.node.chain">
+            function <span class="apidocSignatureSpan">rest.node.</span>chain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.node.wrap">
+            function <span class="apidocSignatureSpan">rest.node.</span>wrap
+            <span class="apidocSignatureSpan">(interceptor, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.pubsub">module rest.pubsub</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.pubsub.publish">
+            function <span class="apidocSignatureSpan">rest.pubsub.</span>publish
+            <span class="apidocSignatureSpan">(topic)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.pubsub.subscribe">
+            function <span class="apidocSignatureSpan">rest.pubsub.</span>subscribe
+            <span class="apidocSignatureSpan">(topic, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.registry">module rest.registry</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.registry.child">
+            function <span class="apidocSignatureSpan">rest.registry.</span>child
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.registry.delegate">
+            function <span class="apidocSignatureSpan">rest.registry.</span>delegate
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.registry.lookup">
+            function <span class="apidocSignatureSpan">rest.registry.</span>lookup
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.registry.register">
+            function <span class="apidocSignatureSpan">rest.registry.</span>register
+            <span class="apidocSignatureSpan">(type, converter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.responsePromise">module rest.responsePromise</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.responsePromise.responsePromise">
+            function <span class="apidocSignatureSpan">rest.</span>responsePromise
+            <span class="apidocSignatureSpan">(obj, callback, errback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.responsePromise.make">
+            function <span class="apidocSignatureSpan">rest.responsePromise.</span>make
+            <span class="apidocSignatureSpan">(promise)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.responsePromise.promise">
+            function <span class="apidocSignatureSpan">rest.responsePromise.</span>promise
+            <span class="apidocSignatureSpan">(func)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.responsePromise.reject">
+            function <span class="apidocSignatureSpan">rest.responsePromise.</span>reject
+            <span class="apidocSignatureSpan">(val)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.rfc5988">module rest.rfc5988</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.rfc5988.SyntaxError">
+            function <span class="apidocSignatureSpan">rest.rfc5988.</span>SyntaxError
+            <span class="apidocSignatureSpan">(expected, found, offset, line, column)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.rfc5988.parse">
+            function <span class="apidocSignatureSpan">rest.rfc5988.</span>parse
+            <span class="apidocSignatureSpan">(input, startRule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.rfc5988.toSource">
+            function <span class="apidocSignatureSpan">rest.rfc5988.</span>toSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.uriEncoder">module rest.uriEncoder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.decode">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>decode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encode">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeFragment">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeFragment
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeHost">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeHost
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodePath">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePath
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodePathSegment">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePathSegment
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodePort">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePort
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeQuery">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeQuery
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeScheme">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeScheme
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeURL">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeURL
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriEncoder.encodeUserInfo">
+            function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeUserInfo
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.uriTemplate">module rest.uriTemplate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.uriTemplate.expand">
+            function <span class="apidocSignatureSpan">rest.uriTemplate.</span>expand
+            <span class="apidocSignatureSpan">(template, params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rest.xhr">module rest.xhr</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.xhr.xhr">
+            function <span class="apidocSignatureSpan">rest.</span>xhr
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.xhr.chain">
+            function <span class="apidocSignatureSpan">rest.xhr.</span>chain
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rest.xhr.wrap">
+            function <span class="apidocSignatureSpan">rest.xhr.</span>wrap
+            <span class="apidocSignatureSpan">(interceptor, config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest" id="apidoc.module.rest">module rest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder" id="apidoc.element.rest.UrlBuilder">
+        function <span class="apidocSignatureSpan">rest.</span>UrlBuilder
+        <span class="apidocSignatureSpan">(template, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UrlBuilder(template, params) {
+	if (!(this instanceof UrlBuilder)) {
+		// invoke as a constructor
+		return new UrlBuilder(template, params);
+	}
+
+	if (template instanceof UrlBuilder) {
+		this._template = template.template;
+		this._params = mixin({}, this._params, params);
+	}
+	else {
+		this._template = (template || '').toString();
+		this._params = params || {};
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.chain" id="apidoc.element.rest.chain">
+        function <span class="apidocSignatureSpan">rest.</span>chain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chain() {
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
+		}
+
+		return impl.wrap.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+1.1.1
+- support for IE 11, Safari 7 and iOS 7 (no code changes required, now actively testing)
+- Node specific configuration options via request.mixin. Particularly useful for https clients. Thanks @wwwdata
+- basic support for Browserify. Note: Browserify is not yet a tested environment
+
+1.1.0
+- bump when.js version to ~3, 2.x is no longer supported
+- perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
+- add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
+- mime converters may return a promise. Thanks @phillipj
+- removed 'rest/util/beget' favor Object.create
+
+1.0.3
+- add moduleType for bower (node and amd). Thanks @briancavalier
+- doc polish. Thanks @gogamoga
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.getDefaultClient" id="apidoc.element.rest.getDefaultClient">
+        function <span class="apidocSignatureSpan">rest.</span>getDefaultClient
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getDefaultClient() {
+	return target;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.interceptor" id="apidoc.element.rest.interceptor">
+        function <span class="apidocSignatureSpan">rest.</span>interceptor
+        <span class="apidocSignatureSpan">(handlers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function interceptor(handlers) {
+
+	var initHandler, requestHandler, successResponseHandler, errorResponseHandler;
+
+	handlers = handlers || {};
+
+	initHandler            = handlers.init    || defaultInitHandler;
+	requestHandler         = handlers.request || defaultRequestHandler;
+	successResponseHandler = handlers.success || handlers.response || defaultResponseHandler;
+	errorResponseHandler   = handlers.error   || function () {
+		// Propagate the rejection, with the result of the handler
+		return Promise.resolve((handlers.response || defaultResponseHandler).apply(this, arguments))
+			.then(Promise.reject.bind(Promise));
+	};
+
+	return function (target, config) {
+
+		if (typeof target === 'object') {
+			config = target;
+		}
+		if (typeof target !== 'function') {
+			target = handlers.client || defaultClient;
+		}
+
+		config = initHandler(config || {});
+
+		function interceptedClient(request) {
+			var context, meta;
+			context = {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
+			request.originator = request.originator || interceptedClient;
+			return responsePromise(
+				requestHandler.call(context, request, config, meta),
+				function (request) {
+					var response, abort, next;
+					next = target;
+					if (request instanceof ComplexRequest) {
+						// unpack request
+						abort = request.abort;
+						next = request.client || next;
+						response = request.response;
+						// normalize request, must be last
+						request = request.request;
+					}
+					response = response || Promise.resolve(request).then(function (request) {
+						return Promise.resolve(next(request)).then(
+							function (response) {
+								return successResponseHandler.call(context, response, config, meta);
+							},
+							function (response) {
+								return errorResponseHandler.call(context, response, config, meta);
+							}
+						);
+					});
+					return abort ? Promise.race([response, abort]) : response;
+				},
+				function (error) {
+					return Promise.reject({ request: request, error: error });
+				}
+			);
+		}
+
+		return client(interceptedClient, target);
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.jsonp" id="apidoc.element.rest.jsonp">
+        function <span class="apidocSignatureSpan">rest.</span>jsonp
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function jsonp(request) {
+	return responsePromise.promise(function (resolve, reject) {
+
+		var callbackName, callbackParams, script, firstScript, response;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		request.callback = request.callback || {};
+		callbackName = registerCallback(request.callback.prefix || 'jsonp', resolve, response, request.callback.name);
+		callbackParams = {};
+		callbackParams[request.callback.param || 'callback'] = callbackName;
+
+		request.canceled = false;
+		request.cancel = function cancel() {
+			request.canceled = true;
+			cleanupScriptNode(response);
+			reject(response);
+		};
+
+		script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.async = true;
+		script.src = response.url = new UrlBuilder(request.path, callbackParams).build();
+
+		function handlePossibleError() {
+			if (typeof window[callbackName] === 'function') {
+				response.error = 'loaderror';
+				clearProperty(window, callbackName);
+				cleanupScriptNode(response);
+				reject(response);
+			}
+		}
+		script.onerror = function () {
+			handlePossibleError();
+		};
+		script.onload = script.onreadystatechange = function (e) {
+			// script tag load callbacks are completely non-standard
+			// handle case where onreadystatechange is fired for an error instead of onerror
+			if ((e &amp;&amp; (e.type === 'load' || e.type === 'error')) || script.readyState === 'loaded') {
+				handlePossibleError();
+			}
+		};
+
+		response.raw = script;
+		firstScript = document.getElementsByTagName('script')[0];
+		firstScript.parentNode.insertBefore(script, firstScript);
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.node" id="apidoc.element.rest.node">
+        function <span class="apidocSignatureSpan">rest.</span>node
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function node(request) {
+	<span class="apidocCodeCommentSpan">/*jshint maxcomplexity:20 */
+</span>	return responsePromise.promise(function (resolve, reject) {
+
+		var options, clientRequest, client, url, headers, entity, response;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		url = response.url = request.path || '';
+		client = url.match(httpsExp) ? https : http;
+
+		options = mixin({}, request.mixin, parser.parse(url));
+
+		entity = request.entity;
+		request.method = request.method || (entity ? 'POST' : 'GET');
+		options.method = request.method;
+		headers = options.headers = {};
+		Object.keys(request.headers || {}).forEach(function (name) {
+			headers[normalizeHeaderName(name)] = request.headers[name];
+		});
+		if (!headers['Content-Length']) {
+			headers['Content-Length'] = entity ? Buffer.byteLength(entity, 'utf8') : 0;
+		}
+
+		request.canceled = false;
+		request.cancel = function cancel() {
+			request.canceled = true;
+			clientRequest.abort();
+		};
+
+		clientRequest = client.request(options, function (clientResponse) {
+			// Array of Buffers to collect response chunks
+			var buffers = [];
+
+			response.raw = {
+				request: clientRequest,
+				response: clientResponse
+			};
+			response.status = {
+				code: clientResponse.statusCode
+				// node doesn't provide access to the status text
+			};
+			response.headers = {};
+			Object.keys(clientResponse.headers).forEach(function (name) {
+				response.headers[normalizeHeaderName(name)] = clientResponse.headers[name];
+			});
+
+			clientResponse.on('data', function (data) {
+				// Collect the next Buffer chunk
+				buffers.push(data);
+			});
+
+			clientResponse.on('end', function () {
+				// Create the final response entity
+				response.entity = buffers.length &gt; 0 ? Buffer.concat(buffers).toString() : '';
+				buffers = null;
+
+				resolve(response);
+			});
+		});
+
+		clientRequest.on('error', function (e) {
+			response.error = e;
+			reject(response);
+		});
+
+		if (entity) {
+			clientRequest.write(entity);
+		}
+		clientRequest.end();
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.resetDefaultClient" id="apidoc.element.rest.resetDefaultClient">
+        function <span class="apidocSignatureSpan">rest.</span>resetDefaultClient
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function resetDefaultClient() {
+	target = platformDefault;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.responsePromise" id="apidoc.element.rest.responsePromise">
+        function <span class="apidocSignatureSpan">rest.</span>responsePromise
+        <span class="apidocSignatureSpan">(obj, callback, errback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function responsePromise(obj, callback, errback) {
+	return make(Promise.resolve(obj).then(callback, errback));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.setDefaultClient" id="apidoc.element.rest.setDefaultClient">
+        function <span class="apidocSignatureSpan">rest.</span>setDefaultClient
+        <span class="apidocSignatureSpan">(client)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setDefaultClient(client) {
+	target = client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.setPlatformDefaultClient" id="apidoc.element.rest.setPlatformDefaultClient">
+        function <span class="apidocSignatureSpan">rest.</span>setPlatformDefaultClient
+        <span class="apidocSignatureSpan">(client)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setPlatformDefaultClient(client) {
+	if (platformDefault) {
+		throw new Error('Unable to redefine platformDefaultClient');
+	}
+	target = platformDefault = client;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.wrap" id="apidoc.element.rest.wrap">
+        function <span class="apidocSignatureSpan">rest.</span>wrap
+        <span class="apidocSignatureSpan">(interceptor, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(interceptor, config) {
+		return interceptor(impl, config);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var rest, mime, client;
+
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
+
+client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
+});
+```
+
+Before an interceptor can be used, it needs to be configured.  In this case, we will accept the default configuration, and obtain
+ a client.  Now when we see the response, the entity will be a JS object instead of a String.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.xhr" id="apidoc.element.rest.xhr">
+        function <span class="apidocSignatureSpan">rest.</span>xhr
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function xhr(request) {
+	return responsePromise.promise(function (resolve, reject) {
+		<span class="apidocCodeCommentSpan">/*jshint maxcomplexity:20 */
+</span>
+		var client, method, url, headers, entity, headerName, response, XHR;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		XHR = request.engine || XMLHttpRequest;
+		if (!XHR) {
+			reject({ request: request, error: 'xhr-not-available' });
+			return;
+		}
+
+		entity = request.entity;
+		request.method = request.method || (entity ? 'POST' : 'GET');
+		method = request.method;
+		url = response.url = request.path || '';
+
+		try {
+			client = response.raw = new XHR();
+
+			// mixin extra request properties before and after opening the request as some properties require being set at different phases
+ of the request
+			safeMixin(client, request.mixin);
+			client.open(method, url, true);
+			safeMixin(client, request.mixin);
+
+			headers = request.headers;
+			for (headerName in headers) {
+				/*jshint forin:false */
+				if (headerName === 'Content-Type' &amp;&amp; headers[headerName] === 'multipart/form-data') {
+					// XMLHttpRequest generates its own Content-Type header with the
+					// appropriate multipart boundary when sending multipart/form-data.
+					continue;
+				}
+
+				client.setRequestHeader(headerName, headers[headerName]);
+			}
+
+			request.canceled = false;
+			request.cancel = function cancel() {
+				request.canceled = true;
+				client.abort();
+				reject(response);
+			};
+
+			client.onreadystatechange = function (/* e */) {
+				if (request.canceled) { return; }
+				if (client.readyState === (XHR.DONE || 4)) {
+					response.status = {
+						code: client.status,
+						text: client.statusText
+					};
+					response.headers = parseHeaders(client.getAllResponseHeaders());
+					response.entity = client.responseText;
+
+					// #125 -- Sometimes IE8-9 uses 1223 instead of 204
+					// http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+					if (response.status.code === 1223) {
+						response.status.code = 204;
+					}
+
+					if (response.status.code &gt; 0) {
+						// check status code as readystatechange fires before error event
+						resolve(response);
+					}
+					else {
+						// give the error callback a chance to fire before resolving
+						// requests for file:// URLs do not have a status code
+						setTimeout(function () {
+							resolve(response);
+						}, 0);
+					}
+				}
+			};
+
+			try {
+				client.onerror = function (/* e */) {
+					response.error = 'loaderror';
+					reject(response);
+				};
+			}
+			catch (e) {
+				// IE 6 will not support error handling
+			}
+
+			client.send(entity);
+		}
+		catch (e) {
+			response.error = 'loaderror';
+			reject(response);
+		}
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.UrlBuilder" id="apidoc.module.rest.UrlBuilder">module rest.UrlBuilder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.UrlBuilder" id="apidoc.element.rest.UrlBuilder.UrlBuilder">
+        function <span class="apidocSignatureSpan">rest.</span>UrlBuilder
+        <span class="apidocSignatureSpan">(template, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function UrlBuilder(template, params) {
+	if (!(this instanceof UrlBuilder)) {
+		// invoke as a constructor
+		return new UrlBuilder(template, params);
+	}
+
+	if (template instanceof UrlBuilder) {
+		this._template = template.template;
+		this._params = mixin({}, this._params, params);
+	}
+	else {
+		this._template = (template || '').toString();
+		this._params = params || {};
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.UrlBuilder.prototype" id="apidoc.module.rest.UrlBuilder.prototype">module rest.UrlBuilder.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.append" id="apidoc.element.rest.UrlBuilder.prototype.append">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>append
+        <span class="apidocSignatureSpan">(template, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (template, params) {
+		// TODO consider query strings and fragments
+		return new UrlBuilder(this._template + template, mixin({}, this._params, params));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	},
+	request: function (request, config) {
+		var path, params;
+
+		path = request.path || '';
+		params = request.params || {};
+
+		request.path = new UrlBuilder(path, config.params).<span class="apidocCodeKeywordSpan">append</span>('', params).build
+();
+		delete request.params;
+
+		return request;
+	}
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.build" id="apidoc.element.rest.UrlBuilder.prototype.build">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>build
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (params) {
+		return buildUrl(this._template, mixin({}, this._params, params));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	/**
+	 * True if the URL is absolute
+	 *
+	 * @return {boolean}
+	 */
+	isAbsolute: function () {
+		return absoluteUrlRE.test(this.<span class="apidocCodeKeywordSpan">build</span>());
+	},
+
+	/**
+	 * True if the URL is fully qualified
+	 *
+	 * @return {boolean}
+	 */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.fullyQualify" id="apidoc.element.rest.UrlBuilder.prototype.fullyQualify">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>fullyQualify
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fullyQualify = function () {
+		if (typeof location === 'undefined') { return this; }
+		if (this.isFullyQualified()) { return this; }
+
+		var template = this._template;
+
+		if (startsWith(template, '//')) {
+			template = origin.protocol + template;
+		}
+		else if (startsWith(template, '/')) {
+			template = origin.origin + template;
+		}
+		else if (!this.isAbsolute()) {
+			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf('/') + 1);
+		}
+
+		if (template.indexOf('/', 8) === -1) {
+			// default the pathname to '/'
+			template = template + '/';
+		}
+
+		return new UrlBuilder(template, this._params);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 * @see https://developer.mozilla.org/en-US/docs/DOM/window.location
+	 *
+	 * @returns {Object} a 'window.location'-like object
+	 */
+	parts: function () {
+		/*jshint maxcomplexity:20 */
+		var url, parts;
+		url = this.<span class="apidocCodeKeywordSpan">fullyQualify</span>().build().match(urlRE);
+		parts = {
+			href: url[0],
+			protocol: url[1],
+			host: url[3] || '',
+			hostname: url[4] || '',
+			port: url[6],
+			pathname: url[7] || '',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.isAbsolute" id="apidoc.element.rest.UrlBuilder.prototype.isAbsolute">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isAbsolute
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isAbsolute = function () {
+		return absoluteUrlRE.test(this.build());
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		if (startsWith(template, '//')) {
+			template = origin.protocol + template;
+		}
+		else if (startsWith(template, '/')) {
+			template = origin.origin + template;
+		}
+		else if (!this.<span class="apidocCodeKeywordSpan">isAbsolute</span>()) {
+			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf('/') + 1);
+		}
+
+		if (template.indexOf('/', 8) === -1) {
+			// default the pathname to '/'
+			template = template + '/';
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.isCrossOrigin" id="apidoc.element.rest.UrlBuilder.prototype.isCrossOrigin">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isCrossOrigin
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isCrossOrigin = function () {
+		if (!origin) {
+			return true;
+		}
+		var url = this.parts();
+		return url.protocol !== origin.protocol ||
+		       url.hostname !== origin.hostname ||
+		       url.port !== origin.port;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.isFullyQualified" id="apidoc.element.rest.UrlBuilder.prototype.isFullyQualified">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>isFullyQualified
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFullyQualified = function () {
+		return fullyQualifiedUrlRE.test(this.build());
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 *
+	 * *Browser only*
+	 *
+	 * @return {UrlBuilder} the fully qualified URL template
+	 */
+	fullyQualify: function () {
+		if (typeof location === 'undefined') { return this; }
+		if (this.<span class="apidocCodeKeywordSpan">isFullyQualified</span>()) { return this; }
+
+		var template = this._template;
+
+		if (startsWith(template, '//')) {
+			template = origin.protocol + template;
+		}
+		else if (startsWith(template, '/')) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.parts" id="apidoc.element.rest.UrlBuilder.prototype.parts">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>parts
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parts = function () {
+		<span class="apidocCodeCommentSpan">/*jshint maxcomplexity:20 */
+</span>		var url, parts;
+		url = this.fullyQualify().build().match(urlRE);
+		parts = {
+			href: url[0],
+			protocol: url[1],
+			host: url[3] || '',
+			hostname: url[4] || '',
+			port: url[6],
+			pathname: url[7] || '',
+			search: url[8] || '',
+			hash: url[9] || ''
+		};
+		parts.origin = parts.protocol + '//' + parts.host;
+		parts.port = parts.port || (parts.protocol === 'https:' ? '443' : parts.protocol === 'http:' ? '80' : '');
+		return parts;
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	 *
+	 * @return {boolean}
+	 */
+	isCrossOrigin: function () {
+		if (!origin) {
+			return true;
+		}
+		var url = this.<span class="apidocCodeKeywordSpan">parts</span>();
+		return url.protocol !== origin.protocol ||
+		       url.hostname !== origin.hostname ||
+		       url.port !== origin.port;
+	},
+
+	/**
+	 * Split a URL into its consituent parts following the naming convention of
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.UrlBuilder.prototype.toString" id="apidoc.element.rest.UrlBuilder.prototype.toString">
+        function <span class="apidocSignatureSpan">rest.UrlBuilder.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+		return this.build();
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}
+
+	if (template instanceof UrlBuilder) {
+		this._template = template.template;
+		this._params = mixin({}, this._params, params);
+	}
+	else {
+		this._template = (template || '').<span class="apidocCodeKeywordSpan">toString</span>();
+		this._params = params || {};
+	}
+}
+
+UrlBuilder.prototype = {
+
+	/**
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.base64" id="apidoc.module.rest.base64">module rest.base64</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.base64.decode" id="apidoc.element.rest.base64.decode">
+        function <span class="apidocSignatureSpan">rest.base64.</span>decode
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64Decode(text) {
+
+	//ignore white space
+	text = text.replace(/\s/g, '');
+
+	//first check for any unexpected input
+	if (!(/^[a-z0-9\+\/\s]+\={0,2}$/i.test(text)) || text.length % 4 &gt; 0) {
+		throw new Error('Not a base64-encoded string.');
+	}
+
+	//local variables
+	var cur, prev, digitNum,
+		i = 0,
+		result = [];
+
+	//remove any equals signs
+	text = text.replace(/\=/g, '');
+
+	//loop over each character
+	while (i &lt; text.length) {
+
+		cur = digits.indexOf(text.charAt(i));
+		digitNum = i % 4;
+
+		switch (digitNum) {
+
+		//case 0: first digit - do nothing, not enough info to work with
+
+		case 1: //second digit
+			result.push(String.fromCharCode(prev &lt;&lt; 2 | cur &gt;&gt; 4));
+			break;
+
+		case 2: //third digit
+			result.push(String.fromCharCode((prev &amp; 0x0f) &lt;&lt; 4 | cur &gt;&gt; 2));
+			break;
+
+		case 3: //fourth digit
+			result.push(String.fromCharCode((prev &amp; 3) &lt;&lt; 6 | cur));
+			break;
+		}
+
+		prev = cur;
+		i += 1;
+	}
+
+	//return a string
+	return result.join('');
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+		if (prefixRE.test(variable)) {
+			var prefix = prefixRE.exec(variable);
+			variable = prefix[1];
+			opts.maxLength = parseInt(prefix[2]);
+		}
+
+		variable = uriEncoder.<span class="apidocCodeKeywordSpan">decode</span>(variable);
+		value = params[variable];
+
+		if (value === void 0 || value === null) {
+			return result;
+		}
+		if (Array.isArray(value)) {
+			result = value.reduce(function (result, value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.base64.encode" id="apidoc.element.rest.base64.encode">
+        function <span class="apidocSignatureSpan">rest.base64.</span>encode
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function base64Encode(text) {
+
+	if (/([^\u0000-\u00ff])/.test(text)) {
+		throw new Error('Can\'t base64 encode non-ASCII characters.');
+	}
+
+	var i = 0,
+		cur, prev, byteNum,
+		result = [];
+
+	while (i &lt; text.length) {
+
+		cur = text.charCodeAt(i);
+		byteNum = i % 3;
+
+		switch (byteNum) {
+		case 0: //first byte
+			result.push(digits.charAt(cur &gt;&gt; 2));
+			break;
+
+		case 1: //second byte
+			result.push(digits.charAt((prev &amp; 3) &lt;&lt; 4 | (cur &gt;&gt; 4)));
+			break;
+
+		case 2: //third byte
+			result.push(digits.charAt((prev &amp; 0x0f) &lt;&lt; 2 | (cur &gt;&gt; 6)));
+			result.push(digits.charAt(cur &amp; 0x3f));
+			break;
+		}
+
+		prev = cur;
+		i += 1;
+	}
+
+	if (byteNum === 0) {
+		result.push(digits.charAt((prev &amp; 3) &lt;&lt; 4));
+		result.push('==');
+	} else if (byteNum === 1) {
+		result.push(digits.charAt((prev &amp; 0x0f) &lt;&lt; 2));
+		result.push('=');
+	}
+
+	return result.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var headers, username, password;
+
+		headers = request.headers || (request.headers = {});
+		username = request.username || config.username;
+		password = request.password || config.password || '';
+
+		if (username) {
+			headers.Authorization = 'Basic ' + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + ':'
+; + password);
+		}
+
+		return request;
+	}
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.find" id="apidoc.module.rest.find">module rest.find</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.find.findProperties" id="apidoc.element.rest.find.findProperties">
+        function <span class="apidocSignatureSpan">rest.find.</span>findProperties
+        <span class="apidocSignatureSpan">(obj, prop, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function findProperties(obj, prop, callback) {
+		if (typeof obj !== 'object' || obj === null) { return; }
+		if (prop in obj) {
+			callback(obj[prop], obj, prop);
+		}
+		Object.keys(obj).forEach(function (key) {
+			findProperties(obj[key], prop, callback);
+		});
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+
+		if (response.headers &amp;&amp; response.headers.Link) {
+			response.links = response.links || {};
+			apply(response.links, parseLinkHeaders(response.headers.Link));
+		}
+
+		find.<span class="apidocCodeKeywordSpan">findProperties</span>(response.entity, 'links', function (obj, host) {
+			var target;
+
+			if (Array.isArray(host.links)) {
+				if (config.target === '') {
+					target = host;
+				}
+				else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.interceptor" id="apidoc.module.rest.interceptor">module rest.interceptor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.interceptor.interceptor" id="apidoc.element.rest.interceptor.interceptor">
+        function <span class="apidocSignatureSpan">rest.</span>interceptor
+        <span class="apidocSignatureSpan">(handlers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function interceptor(handlers) {
+
+	var initHandler, requestHandler, successResponseHandler, errorResponseHandler;
+
+	handlers = handlers || {};
+
+	initHandler            = handlers.init    || defaultInitHandler;
+	requestHandler         = handlers.request || defaultRequestHandler;
+	successResponseHandler = handlers.success || handlers.response || defaultResponseHandler;
+	errorResponseHandler   = handlers.error   || function () {
+		// Propagate the rejection, with the result of the handler
+		return Promise.resolve((handlers.response || defaultResponseHandler).apply(this, arguments))
+			.then(Promise.reject.bind(Promise));
+	};
+
+	return function (target, config) {
+
+		if (typeof target === 'object') {
+			config = target;
+		}
+		if (typeof target !== 'function') {
+			target = handlers.client || defaultClient;
+		}
+
+		config = initHandler(config || {});
+
+		function interceptedClient(request) {
+			var context, meta;
+			context = {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
+			request.originator = request.originator || interceptedClient;
+			return responsePromise(
+				requestHandler.call(context, request, config, meta),
+				function (request) {
+					var response, abort, next;
+					next = target;
+					if (request instanceof ComplexRequest) {
+						// unpack request
+						abort = request.abort;
+						next = request.client || next;
+						response = request.response;
+						// normalize request, must be last
+						request = request.request;
+					}
+					response = response || Promise.resolve(request).then(function (request) {
+						return Promise.resolve(next(request)).then(
+							function (response) {
+								return successResponseHandler.call(context, response, config, meta);
+							},
+							function (response) {
+								return errorResponseHandler.call(context, response, config, meta);
+							}
+						);
+					});
+					return abort ? Promise.race([response, abort]) : response;
+				},
+				function (error) {
+					return Promise.reject({ request: request, error: error });
+				}
+			);
+		}
+
+		return client(interceptedClient, target);
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.interceptor.ComplexRequest" id="apidoc.element.rest.interceptor.ComplexRequest">
+        function <span class="apidocSignatureSpan">rest.interceptor.</span>ComplexRequest
+        <span class="apidocSignatureSpan">(properties)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ComplexRequest(properties) {
+	if (!(this instanceof ComplexRequest)) {
+		// in case users forget the 'new' don't mix into the interceptor
+		return new ComplexRequest(properties);
+	}
+	mixin(this, properties);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+					request.canceled = false;
+				}
+			}
+			else if (!transient) {
+				request.canceled = true;
+			}
+		}, timeout);
+		return new interceptor.<span class="apidocCodeKeywordSpan">ComplexRequest</span>({ request: request, abort: abort });
+	},
+	response: function (response) {
+		if (this.timeout) {
+			clearTimeout(this.timeout);
+			delete this.timeout;
+		}
+		return response;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.jsonp" id="apidoc.module.rest.jsonp">module rest.jsonp</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.jsonp.jsonp" id="apidoc.element.rest.jsonp.jsonp">
+        function <span class="apidocSignatureSpan">rest.</span>jsonp
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function jsonp(request) {
+	return responsePromise.promise(function (resolve, reject) {
+
+		var callbackName, callbackParams, script, firstScript, response;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		request.callback = request.callback || {};
+		callbackName = registerCallback(request.callback.prefix || 'jsonp', resolve, response, request.callback.name);
+		callbackParams = {};
+		callbackParams[request.callback.param || 'callback'] = callbackName;
+
+		request.canceled = false;
+		request.cancel = function cancel() {
+			request.canceled = true;
+			cleanupScriptNode(response);
+			reject(response);
+		};
+
+		script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.async = true;
+		script.src = response.url = new UrlBuilder(request.path, callbackParams).build();
+
+		function handlePossibleError() {
+			if (typeof window[callbackName] === 'function') {
+				response.error = 'loaderror';
+				clearProperty(window, callbackName);
+				cleanupScriptNode(response);
+				reject(response);
+			}
+		}
+		script.onerror = function () {
+			handlePossibleError();
+		};
+		script.onload = script.onreadystatechange = function (e) {
+			// script tag load callbacks are completely non-standard
+			// handle case where onreadystatechange is fired for an error instead of onerror
+			if ((e &amp;&amp; (e.type === 'load' || e.type === 'error')) || script.readyState === 'loaded') {
+				handlePossibleError();
+			}
+		};
+
+		response.raw = script;
+		firstScript = document.getElementsByTagName('script')[0];
+		firstScript.parentNode.insertBefore(script, firstScript);
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.jsonp.chain" id="apidoc.element.rest.jsonp.chain">
+        function <span class="apidocSignatureSpan">rest.jsonp.</span>chain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chain() {
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
+		}
+
+		return impl.wrap.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+1.1.1
+- support for IE 11, Safari 7 and iOS 7 (no code changes required, now actively testing)
+- Node specific configuration options via request.mixin. Particularly useful for https clients. Thanks @wwwdata
+- basic support for Browserify. Note: Browserify is not yet a tested environment
+
+1.1.0
+- bump when.js version to ~3, 2.x is no longer supported
+- perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
+- add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
+- mime converters may return a promise. Thanks @phillipj
+- removed 'rest/util/beget' favor Object.create
+
+1.0.3
+- add moduleType for bower (node and amd). Thanks @briancavalier
+- doc polish. Thanks @gogamoga
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.jsonp.wrap" id="apidoc.element.rest.jsonp.wrap">
+        function <span class="apidocSignatureSpan">rest.jsonp.</span>wrap
+        <span class="apidocSignatureSpan">(interceptor, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(interceptor, config) {
+		return interceptor(impl, config);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var rest, mime, client;
+
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
+
+client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
+});
+```
+
+Before an interceptor can be used, it needs to be configured.  In this case, we will accept the default configuration, and obtain
+ a client.  Now when we see the response, the entity will be a JS object instead of a String.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.node" id="apidoc.module.rest.node">module rest.node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.node.node" id="apidoc.element.rest.node.node">
+        function <span class="apidocSignatureSpan">rest.</span>node
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function node(request) {
+	<span class="apidocCodeCommentSpan">/*jshint maxcomplexity:20 */
+</span>	return responsePromise.promise(function (resolve, reject) {
+
+		var options, clientRequest, client, url, headers, entity, response;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		url = response.url = request.path || '';
+		client = url.match(httpsExp) ? https : http;
+
+		options = mixin({}, request.mixin, parser.parse(url));
+
+		entity = request.entity;
+		request.method = request.method || (entity ? 'POST' : 'GET');
+		options.method = request.method;
+		headers = options.headers = {};
+		Object.keys(request.headers || {}).forEach(function (name) {
+			headers[normalizeHeaderName(name)] = request.headers[name];
+		});
+		if (!headers['Content-Length']) {
+			headers['Content-Length'] = entity ? Buffer.byteLength(entity, 'utf8') : 0;
+		}
+
+		request.canceled = false;
+		request.cancel = function cancel() {
+			request.canceled = true;
+			clientRequest.abort();
+		};
+
+		clientRequest = client.request(options, function (clientResponse) {
+			// Array of Buffers to collect response chunks
+			var buffers = [];
+
+			response.raw = {
+				request: clientRequest,
+				response: clientResponse
+			};
+			response.status = {
+				code: clientResponse.statusCode
+				// node doesn't provide access to the status text
+			};
+			response.headers = {};
+			Object.keys(clientResponse.headers).forEach(function (name) {
+				response.headers[normalizeHeaderName(name)] = clientResponse.headers[name];
+			});
+
+			clientResponse.on('data', function (data) {
+				// Collect the next Buffer chunk
+				buffers.push(data);
+			});
+
+			clientResponse.on('end', function () {
+				// Create the final response entity
+				response.entity = buffers.length &gt; 0 ? Buffer.concat(buffers).toString() : '';
+				buffers = null;
+
+				resolve(response);
+			});
+		});
+
+		clientRequest.on('error', function (e) {
+			response.error = e;
+			reject(response);
+		});
+
+		if (entity) {
+			clientRequest.write(entity);
+		}
+		clientRequest.end();
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.node.chain" id="apidoc.element.rest.node.chain">
+        function <span class="apidocSignatureSpan">rest.node.</span>chain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chain() {
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
+		}
+
+		return impl.wrap.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+1.1.1
+- support for IE 11, Safari 7 and iOS 7 (no code changes required, now actively testing)
+- Node specific configuration options via request.mixin. Particularly useful for https clients. Thanks @wwwdata
+- basic support for Browserify. Note: Browserify is not yet a tested environment
+
+1.1.0
+- bump when.js version to ~3, 2.x is no longer supported
+- perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
+- add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
+- mime converters may return a promise. Thanks @phillipj
+- removed 'rest/util/beget' favor Object.create
+
+1.0.3
+- add moduleType for bower (node and amd). Thanks @briancavalier
+- doc polish. Thanks @gogamoga
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.node.wrap" id="apidoc.element.rest.node.wrap">
+        function <span class="apidocSignatureSpan">rest.node.</span>wrap
+        <span class="apidocSignatureSpan">(interceptor, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(interceptor, config) {
+		return interceptor(impl, config);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var rest, mime, client;
+
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
+
+client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
+});
+```
+
+Before an interceptor can be used, it needs to be configured.  In this case, we will accept the default configuration, and obtain
+ a client.  Now when we see the response, the entity will be a JS object instead of a String.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.pubsub" id="apidoc.module.rest.pubsub">module rest.pubsub</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.pubsub.publish" id="apidoc.element.rest.pubsub.publish">
+        function <span class="apidocSignatureSpan">rest.pubsub.</span>publish
+        <span class="apidocSignatureSpan">(topic)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function publish(topic) {
+	if (!topics[topic]) { return; }
+	topics[topic].apply({}, Array.prototype.slice.call(arguments, 1));
+	// auto cleanup
+	delete topics[topic];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	m = regex.exec(queryString);
+	do {
+		params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+		m = regex.exec(queryString);
+	} while (m);
+
+	/*jshint camelcase:false */
+	pubsub.<span class="apidocCodeKeywordSpan">publish</span>(params.state, params.token_type + ' ' + params.access_token
+);
+}
+
+function defaultWindowStrategy(url) {
+	var w = window.open(url, '_blank', 'width=500,height=400');
+	return function () {
+		w.close();
+	};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.pubsub.subscribe" id="apidoc.element.rest.pubsub.subscribe">
+        function <span class="apidocSignatureSpan">rest.pubsub.</span>subscribe
+        <span class="apidocSignatureSpan">(topic, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function subscribe(topic, callback) {
+	topics[topic] = callback;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			'client_id': config.clientId,
+			'scope': config.scope,
+			'state': state
+		});
+
+		dismissWindow = config.windowStrategy(url);
+
+		pubsub.<span class="apidocCodeKeywordSpan">subscribe</span>(state, function (authorization) {
+			dismissWindow();
+			resolve(authorization);
+		});
+
+	});
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.registry" id="apidoc.module.rest.registry">module rest.registry</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.registry.child" id="apidoc.element.rest.registry.child">
+        function <span class="apidocSignatureSpan">rest.registry.</span>child
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function child() {
+		return new Registry(Object.create(mimes));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.registry.delegate" id="apidoc.element.rest.registry.delegate">
+        function <span class="apidocSignatureSpan">rest.registry.</span>delegate
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function delegate(type) {
+		return {
+			read: function () {
+				var args = arguments;
+				return this.lookup(type).then(function (converter) {
+					return converter.read.apply(this, args);
+				}.bind(this));
+			}.bind(this),
+			write: function () {
+				var args = arguments;
+				return this.lookup(type).then(function (converter) {
+					return converter.write.apply(this, args);
+				}.bind(this));
+			}.bind(this)
+		};
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// include provided serializers
+registry.register('application/hal', require('./type/application/hal'));
+registry.register('application/json', require('./type/application/json'));
+registry.register('application/x-www-form-urlencoded', require('./type/application/x-www-form-urlencoded'));
+registry.register('multipart/form-data', require('./type/multipart/form-data'));
+registry.register('text/plain', require('./type/text/plain'));
+
+registry.register('+json', registry.<span class="apidocCodeKeywordSpan">delegate</span>('application/json'));
+
+module.exports = registry;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.registry.lookup" id="apidoc.element.rest.registry.lookup">
+        function <span class="apidocSignatureSpan">rest.registry.</span>lookup
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lookup(type) {
+		var parsed;
+
+		parsed = typeof type === 'string' ? mime.parse(type) : type;
+
+		if (mimes[parsed.raw]) {
+			return mimes[parsed.raw];
+		}
+		if (mimes[parsed.type + parsed.suffix]) {
+			return mimes[parsed.type + parsed.suffix];
+		}
+		if (mimes[parsed.type]) {
+			return mimes[parsed.type];
+		}
+		if (mimes[parsed.suffix]) {
+			return mimes[parsed.suffix];
+		}
+
+		return Promise.reject(new Error('Unable to locate converter for mime "' + parsed.raw + '"'));
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+		if (!('entity' in request)) {
+			return request;
+		}
+
+		headers['Content-Type'] = type.raw;
+
+		return config.registry.<span class="apidocCodeKeywordSpan">lookup</span>(type)['catch'](function () {
+			// failed to resolve converter
+			if (config.permissive) {
+				return noopConverter;
+			}
+			throw 'mime-unknown';
+		}).then(function (converter) {
+			var client = config.client || request.originator,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.registry.register" id="apidoc.element.rest.registry.register">
+        function <span class="apidocSignatureSpan">rest.registry.</span>register
+        <span class="apidocSignatureSpan">(type, converter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function register(type, converter) {
+		mimes[type] = Promise.resolve(converter);
+		return mimes[type];
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+### Custom MIME Converters: ###
+
+```javascript
+var registry = require('rest/mime/registry');
+
+registry.<span class="apidocCodeKeywordSpan">register</span>('application/vnd.com.example', {
+read: function(str) {
+    var obj;
+    // do string to object conversions
+    return obj;
+},
+write: function(obj) {
+    var str;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.responsePromise" id="apidoc.module.rest.responsePromise">module rest.responsePromise</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.responsePromise.responsePromise" id="apidoc.element.rest.responsePromise.responsePromise">
+        function <span class="apidocSignatureSpan">rest.</span>responsePromise
+        <span class="apidocSignatureSpan">(obj, callback, errback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function responsePromise(obj, callback, errback) {
+	return make(Promise.resolve(obj).then(callback, errback));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.responsePromise.make" id="apidoc.element.rest.responsePromise.make">
+        function <span class="apidocSignatureSpan">rest.responsePromise.</span>make
+        <span class="apidocSignatureSpan">(promise)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function make(promise) {
+	promise.status = status;
+	promise.headers = headers;
+	promise.header = header;
+	promise.entity = entity;
+	promise.follow = follow;
+	return promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.responsePromise.promise" id="apidoc.element.rest.responsePromise.promise">
+        function <span class="apidocSignatureSpan">rest.responsePromise.</span>promise
+        <span class="apidocSignatureSpan">(func)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">promise = function (func) {
+	return make(new Promise(func));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {string} [request.callback.name=&lt;generated&gt;] pins the name of the
+ *   callback function, useful for cases where the server doesn't allow
+ *   custom callback names. Generally not recommended.
+ *
+ * @returns {Promise&lt;Response&gt;}
+ */
+module.exports = client(function jsonp(request) {
+	return responsePromise.<span class="apidocCodeKeywordSpan">promise</span>(function (resolve, reject) {
+
+		var callbackName, callbackParams, script, firstScript, response;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.responsePromise.reject" id="apidoc.element.rest.responsePromise.reject">
+        function <span class="apidocSignatureSpan">rest.responsePromise.</span>reject
+        <span class="apidocSignatureSpan">(val)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">reject = function (val) {
+	return make(Promise.reject(val));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = interceptor({
+	init: function (config) {
+		config.code = config.code || 400;
+		return config;
+	},
+	response: function (response, config) {
+		if (response.status &amp;&amp; response.status.code &gt;= config.code) {
+			return Promise.<span class="apidocCodeKeywordSpan">reject</span>(response);
+		}
+		return response;
+	}
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.rfc5988" id="apidoc.module.rest.rfc5988">module rest.rfc5988</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.rfc5988.SyntaxError" id="apidoc.element.rest.rfc5988.SyntaxError">
+        function <span class="apidocSignatureSpan">rest.rfc5988.</span>SyntaxError
+        <span class="apidocSignatureSpan">(expected, found, offset, line, column)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SyntaxError = function (expected, found, offset, line, column) {
+  function buildMessage(expected, found) {
+    var expectedHumanized, foundHumanized;
+
+    switch (expected.length) {
+      case 0:
+        expectedHumanized = "end of input";
+        break;
+      case 1:
+        expectedHumanized = expected[0];
+        break;
+      default:
+        expectedHumanized = expected.slice(0, expected.length - 1).join(", ")
+          + " or "
+          + expected[expected.length - 1];
+    }
+
+    foundHumanized = found ? quote(found) : "end of input";
+
+    return "Expected " + expectedHumanized + " but " + foundHumanized + " found.";
+  }
+
+  this.name = "SyntaxError";
+  this.expected = expected;
+  this.found = found;
+  this.message = buildMessage(expected, found);
+  this.offset = offset;
+  this.line = line;
+  this.column = column;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * handle these states.
+ */
+if (result === null || pos !== input.length) {
+  var offset = Math.max(pos, rightmostFailuresPos);
+  var found = offset &lt; input.length ? input.charAt(offset) : null;
+  var errorPosition = computeErrorPosition();
+
+  throw new this.<span class="apidocCodeKeywordSpan">SyntaxError</span>(
+    cleanupExpected(rightmostFailuresExpected),
+    found,
+    offset,
+    errorPosition.line,
+    errorPosition.column
+  );
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.rfc5988.parse" id="apidoc.element.rest.rfc5988.parse">
+        function <span class="apidocSignatureSpan">rest.rfc5988.</span>parse
+        <span class="apidocSignatureSpan">(input, startRule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (input, startRule) {
+  var parseFunctions = {
+    "start": parse_start,
+    "LinkValue": parse_LinkValue,
+    "LinkParams": parse_LinkParams,
+    "URIReference": parse_URIReference,
+    "LinkParam": parse_LinkParam,
+    "LinkParamName": parse_LinkParamName,
+    "LinkParamValue": parse_LinkParamValue,
+    "PToken": parse_PToken,
+    "PTokenChar": parse_PTokenChar,
+    "OptionalSP": parse_OptionalSP,
+    "QuotedString": parse_QuotedString,
+    "QuotedStringInternal": parse_QuotedStringInternal,
+    "Char": parse_Char,
+    "UpAlpha": parse_UpAlpha,
+    "LoAlpha": parse_LoAlpha,
+    "Alpha": parse_Alpha,
+    "Digit": parse_Digit,
+    "SP": parse_SP,
+    "DQ": parse_DQ,
+    "QDText": parse_QDText,
+    "QuotedPair": parse_QuotedPair
+  };
+
+  if (startRule !== undefined) {
+    if (parseFunctions[startRule] === undefined) {
+      throw new Error("Invalid rule name: " + quote(startRule) + ".");
+    }
+  } else {
+    startRule = "start";
+  }
+
+  var pos = 0;
+  var reportFailures = 0;
+  var rightmostFailuresPos = 0;
+  var rightmostFailuresExpected = [];
+
+  function padLeft(input, padding, length) {
+    var result = input;
+
+    var padLength = length - input.length;
+    for (var i = 0; i &lt; padLength; i++) {
+      result = padding + result;
+    }
+
+    return result;
+  }
+
+  function escape(ch) {
+    var charCode = ch.charCodeAt(0);
+    var escapeChar;
+    var length;
+
+    if (charCode &lt;= 0xFF) {
+      escapeChar = 'x';
+      length = 2;
+    } else {
+      escapeChar = 'u';
+      length = 4;
+    }
+
+    return '\\' + escapeChar + padLeft(charCode.toString(16).toUpperCase(), '0', length);
+  }
+
+  function matchFailed(failure) {
+    if (pos &lt; rightmostFailuresPos) {
+      return;
+    }
+
+    if (pos &gt; rightmostFailuresPos) {
+      rightmostFailuresPos = pos;
+      rightmostFailuresExpected = [];
+    }
+
+    rightmostFailuresExpected.push(failure);
+  }
+
+  function parse_start() {
+    var result0, result1, result2, result3, result4;
+    var pos0, pos1, pos2, pos3;
+
+    pos0 = pos;
+    pos1 = pos;
+    result0 = [];
+    pos2 = pos;
+    pos3 = pos;
+    result1 = parse_LinkValue();
+    if (result1 !== null) {
+      result2 = parse_OptionalSP();
+      if (result2 !== null) {
+        if (input.charCodeAt(pos) === 44) {
+          result3 = ",";
+          pos++;
+        } else {
+          result3 = null;
+          if (reportFailures === 0) {
+            matchFailed("\",\"");
+          }
+        }
+        if (result3 !== null) {
+          result4 = parse_OptionalSP();
+          if (result4 !== null) {
+            result1 = [result1, result2, result3, result4];
+          } else {
+            result1 = null;
+            pos = pos3;
+          }
+        } else {
+          result1 = null;
+          pos = pos3;
+        }
+      } else {
+        result1 = null;
+        pos = pos3;
+      }
+    } else {
+      result1 = null;
+      pos = pos3;
+    }
+    if (result1 !== null) {
+      result1 = (function(offset, i) {return i;})(pos2, result1[0]);
+    }
+    if (result1 === null) {
+      pos = pos2;
+    }
+    while (result1 !== null) {
+      result0.push(result1);
+      pos2 = pos;
+      pos3 = pos;
+      result1 = parse_LinkValue();
+      if (result1 !== null) {
+        result2 = parse_OptionalSP();
+        if (result2 !== null) {
+          if (input.charCodeAt(pos) === 44) {
+            result3 = ",";
+            pos++;
+          } else {
+            result3 = null;
+            if (reportFailures === 0) {
+              matchFailed("\",\"");
+            }
+          }
+          if (result3 !== null) {
+            result4 = parse_OptionalSP();
+            if (result4 !== null) {
+              result1 = [result1, result2, result3, result4];
+            } else {
+              result1 = null;
+              pos = pos3;
+            }
+          } else {
+            result1 = null;
+            pos = pos3;
+          }
+        } else {
+          result1 = null;
+          pos = pos3;
+        }
+      } else {
+        result1 = null;
+        pos = pos3;
+      }
+      if (result1 !== null) {
+        result1 = (function(offset, i) {return i;})(pos2, result1[0]);
+      } ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			reject(response);
+			return;
+		}
+
+		url = response.url = request.path || '';
+		client = url.match(httpsExp) ? https : http;
+
+		options = mixin({}, request.mixin, parser.<span class="apidocCodeKeywordSpan">parse</span>(url));
+
+		entity = request.entity;
+		request.method = request.method || (entity ? 'POST' : 'GET');
+		options.method = request.method;
+		headers = options.headers = {};
+		Object.keys(request.headers || {}).forEach(function (name) {
+			headers[normalizeHeaderName(name)] = request.headers[name];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.rfc5988.toSource" id="apidoc.element.rest.rfc5988.toSource">
+        function <span class="apidocSignatureSpan">rest.rfc5988.</span>toSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toSource = function () { return this._source; }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.uriEncoder" id="apidoc.module.rest.uriEncoder">module rest.uriEncoder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.decode" id="apidoc.element.rest.uriEncoder.decode">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>decode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decode(str) {
+	return decodeURIComponent(str);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		}
+		if (prefixRE.test(variable)) {
+			var prefix = prefixRE.exec(variable);
+			variable = prefix[1];
+			opts.maxLength = parseInt(prefix[2]);
+		}
+
+		variable = uriEncoder.<span class="apidocCodeKeywordSpan">decode</span>(variable);
+		value = params[variable];
+
+		if (value === void 0 || value === null) {
+			return result;
+		}
+		if (Array.isArray(value)) {
+			result = value.reduce(function (result, value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encode" id="apidoc.element.rest.uriEncoder.encode">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encode = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+		var headers, username, password;
+
+		headers = request.headers || (request.headers = {});
+		username = request.username || config.username;
+		password = request.password || config.password || '';
+
+		if (username) {
+			headers.Authorization = 'Basic ' + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + ':'
+; + password);
+		}
+
+		return request;
+	}
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeFragment" id="apidoc.element.rest.uriEncoder.encodeFragment">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeFragment
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeFragment = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeHost" id="apidoc.element.rest.uriEncoder.encodeHost">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeHost
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeHost = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodePath" id="apidoc.element.rest.uriEncoder.encodePath">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePath
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePath = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodePathSegment" id="apidoc.element.rest.uriEncoder.encodePathSegment">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePathSegment
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePathSegment = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodePort" id="apidoc.element.rest.uriEncoder.encodePort">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodePort
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodePort = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeQuery" id="apidoc.element.rest.uriEncoder.encodeQuery">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeQuery
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeQuery = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeScheme" id="apidoc.element.rest.uriEncoder.encodeScheme">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeScheme
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeScheme = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeURL" id="apidoc.element.rest.uriEncoder.encodeURL">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeURL
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeURL = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriEncoder.encodeUserInfo" id="apidoc.element.rest.uriEncoder.encodeUserInfo">
+        function <span class="apidocSignatureSpan">rest.uriEncoder.</span>encodeUserInfo
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encodeUserInfo = function (str) {
+		return encode(str, allowed);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.uriTemplate" id="apidoc.module.rest.uriTemplate">module rest.uriTemplate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.uriTemplate.expand" id="apidoc.element.rest.uriTemplate.expand">
+        function <span class="apidocSignatureSpan">rest.uriTemplate.</span>expand
+        <span class="apidocSignatureSpan">(template, params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function expandTemplate(template, params) {
+	var start, end, uri;
+
+	uri = '';
+	end = 0;
+	while (true) {
+		start = template.indexOf('{', end);
+		if (start === -1) {
+			// no more expressions
+			uri += template.slice(end);
+			break;
+		}
+		uri += template.slice(end, start);
+		end = template.indexOf('}', start) + 1;
+		uri += expandExpression(template.slice(start + 1, end - 1), params);
+	}
+
+	return uri;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	},
+	request: function (request, config) {
+		var template, params;
+
+		template = request.path || config.template;
+		params = mixin({}, request.params, config.params);
+
+		request.path = uriTemplate.<span class="apidocCodeKeywordSpan">expand</span>(template, params);
+		delete request.params;
+
+		return request;
+	}
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rest.xhr" id="apidoc.module.rest.xhr">module rest.xhr</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rest.xhr.xhr" id="apidoc.element.rest.xhr.xhr">
+        function <span class="apidocSignatureSpan">rest.</span>xhr
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function xhr(request) {
+	return responsePromise.promise(function (resolve, reject) {
+		<span class="apidocCodeCommentSpan">/*jshint maxcomplexity:20 */
+</span>
+		var client, method, url, headers, entity, headerName, response, XHR;
+
+		request = typeof request === 'string' ? { path: request } : request || {};
+		response = { request: request };
+
+		if (request.canceled) {
+			response.error = 'precanceled';
+			reject(response);
+			return;
+		}
+
+		XHR = request.engine || XMLHttpRequest;
+		if (!XHR) {
+			reject({ request: request, error: 'xhr-not-available' });
+			return;
+		}
+
+		entity = request.entity;
+		request.method = request.method || (entity ? 'POST' : 'GET');
+		method = request.method;
+		url = response.url = request.path || '';
+
+		try {
+			client = response.raw = new XHR();
+
+			// mixin extra request properties before and after opening the request as some properties require being set at different phases
+ of the request
+			safeMixin(client, request.mixin);
+			client.open(method, url, true);
+			safeMixin(client, request.mixin);
+
+			headers = request.headers;
+			for (headerName in headers) {
+				/*jshint forin:false */
+				if (headerName === 'Content-Type' &amp;&amp; headers[headerName] === 'multipart/form-data') {
+					// XMLHttpRequest generates its own Content-Type header with the
+					// appropriate multipart boundary when sending multipart/form-data.
+					continue;
+				}
+
+				client.setRequestHeader(headerName, headers[headerName]);
+			}
+
+			request.canceled = false;
+			request.cancel = function cancel() {
+				request.canceled = true;
+				client.abort();
+				reject(response);
+			};
+
+			client.onreadystatechange = function (/* e */) {
+				if (request.canceled) { return; }
+				if (client.readyState === (XHR.DONE || 4)) {
+					response.status = {
+						code: client.status,
+						text: client.statusText
+					};
+					response.headers = parseHeaders(client.getAllResponseHeaders());
+					response.entity = client.responseText;
+
+					// #125 -- Sometimes IE8-9 uses 1223 instead of 204
+					// http://stackoverflow.com/questions/10046972/msie-returns-status-code-of-1223-for-ajax-request
+					if (response.status.code === 1223) {
+						response.status.code = 204;
+					}
+
+					if (response.status.code &gt; 0) {
+						// check status code as readystatechange fires before error event
+						resolve(response);
+					}
+					else {
+						// give the error callback a chance to fire before resolving
+						// requests for file:// URLs do not have a status code
+						setTimeout(function () {
+							resolve(response);
+						}, 0);
+					}
+				}
+			};
+
+			try {
+				client.onerror = function (/* e */) {
+					response.error = 'loaderror';
+					reject(response);
+				};
+			}
+			catch (e) {
+				// IE 6 will not support error handling
+			}
+
+			client.send(entity);
+		}
+		catch (e) {
+			response.error = 'loaderror';
+			reject(response);
+		}
+
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.xhr.chain" id="apidoc.element.rest.xhr.chain">
+        function <span class="apidocSignatureSpan">rest.xhr.</span>chain
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chain() {
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
+		}
+
+		return impl.wrap.apply(this, arguments);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+1.1.1
+- support for IE 11, Safari 7 and iOS 7 (no code changes required, now actively testing)
+- Node specific configuration options via request.mixin. Particularly useful for https clients. Thanks @wwwdata
+- basic support for Browserify. Note: Browserify is not yet a tested environment
+
+1.1.0
+- bump when.js version to ~3, 2.x is no longer supported
+- perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
+- add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
+- mime converters may return a promise. Thanks @phillipj
+- removed 'rest/util/beget' favor Object.create
+
+1.0.3
+- add moduleType for bower (node and amd). Thanks @briancavalier
+- doc polish. Thanks @gogamoga
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rest.xhr.wrap" id="apidoc.element.rest.xhr.wrap">
+        function <span class="apidocSignatureSpan">rest.xhr.</span>wrap
+        <span class="apidocSignatureSpan">(interceptor, config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(interceptor, config) {
+		return interceptor(impl, config);
+	}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var rest, mime, client;
+
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
+
+client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
+});
+```
+
+Before an interceptor can be used, it needs to be configured.  In this case, we will accept the default configuration, and obtain
+ a client.  Now when we see the response, the entity will be a JS object instead of a String.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
