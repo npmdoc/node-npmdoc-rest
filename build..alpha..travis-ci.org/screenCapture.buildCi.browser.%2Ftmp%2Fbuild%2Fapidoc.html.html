@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/cujojs/rest#readme"
-
-    >rest (v2.0.0)</a>
+    <a href="https://github.com/cujojs/rest#readme">rest (v2.0.0)</a>
 </h1>
 <h4>RESTful HTTP client library</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.rest">module rest</a><ol>
 
@@ -1339,7 +1332,7 @@
 		this._params = mixin({}, this._params, params);
 	}
 	else {
-		this._template = (template || &#x27;&#x27;).toString();
+		this._template = (template || '').toString();
 		this._params = params || {};
 	}
 }</pre></li>
@@ -1377,10 +1370,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">basicAuth = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1389,8 +1382,8 @@
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1438,8 +1431,8 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -1455,7 +1448,7 @@
 - perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
 - add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
 - mime converters may return a promise. Thanks @phillipj
-- removed &#x27;rest/util/beget&#x27; favor Object.create
+- removed 'rest/util/beget' favor Object.create
 
 1.0.3
 - add moduleType for bower (node and amd). Thanks @briancavalier
@@ -1500,8 +1493,8 @@
 	 * @deprecated
 	 */
 	impl.chain = function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -1540,10 +1533,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">csrf = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1552,8 +1545,8 @@
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1617,10 +1610,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">defaultRequest = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1629,8 +1622,8 @@
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1700,10 +1693,10 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">entity = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1712,8 +1705,8 @@
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1758,11 +1751,11 @@
 
 1.2.0
 - deprecated rest/interceptor/entity: instead use response.<span class="apidocCodeKeywordSpan">entity</span>()
-- deprecated and removed wire.js reference resolves &#x27;client!&#x27; and &#x27;resource!&#x27;, instead use the &#x27;rest/wire
-&#x27; factory
+- deprecated and removed wire.js reference resolves 'client!' and 'resource!', instead use the 'rest/wire
+' factory
 - deprecated and removed Dojo store support
-- separate browser and node main modules, browser consumers should switch their main module from &#x27;rest/rest&#x27; to &#x27;
-rest/browser&#x27;. This allows tools such as browerify and webpack to more intelligently reason about the module structure.
+- separate browser and node main modules, browser consumers should switch their main module from 'rest/rest' to '
+rest/browser'. This allows tools such as browerify and webpack to more intelligently reason about the module structure.
 - Multipart requests for browsers that support FormData (sorry IE 6-9). Thanks @mjackson
 - mixin property support in defaultRequest interceptor. Thanks @jiangtyd
 - allow location interceptor to be applied based on the status code. Thanks @phillipj
@@ -1781,10 +1774,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">errorCode = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1793,8 +1786,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1858,10 +1851,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">hateoas = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1870,8 +1863,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -1935,10 +1928,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 
 	return function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -1947,8 +1940,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2001,19 +1994,19 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 
 		var callbackName, callbackParams, script, firstScript, response;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
 		request.callback = request.callback || {};
-		callbackName = registerCallback(request.callback.prefix || &#x27;jsonp&#x27;, resolve, response, request.callback.name);
+		callbackName = registerCallback(request.callback.prefix || 'jsonp', resolve, response, request.callback.name);
 		callbackParams = {};
-		callbackParams[request.callback.param || &#x27;callback&#x27;] = callbackName;
+		callbackParams[request.callback.param || 'callback'] = callbackName;
 
 		request.canceled = false;
 		request.cancel = function cancel() {
@@ -2022,14 +2015,14 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 			reject(response);
 		};
 
-		script = document.createElement(&#x27;script&#x27;);
-		script.type = &#x27;text/javascript&#x27;;
+		script = document.createElement('script');
+		script.type = 'text/javascript';
 		script.async = true;
 		script.src = response.url = new UrlBuilder(request.path, callbackParams).build();
 
 		function handlePossibleError() {
-			if (typeof window[callbackName] === &#x27;function&#x27;) {
-				response.error = &#x27;loaderror&#x27;;
+			if (typeof window[callbackName] === 'function') {
+				response.error = 'loaderror';
 				clearProperty(window, callbackName);
 				cleanupScriptNode(response);
 				reject(response);
@@ -2041,13 +2034,13 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		script.onload = script.onreadystatechange = function (e) {
 			// script tag load callbacks are completely non-standard
 			// handle case where onreadystatechange is fired for an error instead of onerror
-			if ((e &#x26;&#x26; (e.type === &#x27;load&#x27; || e.type === &#x27;error&#x27;)) || script.readyState === &#x27;loaded&#x27;) {
+			if ((e &amp;&amp; (e.type === 'load' || e.type === 'error')) || script.readyState === 'loaded') {
 				handlePossibleError();
 			}
 		};
 
 		response.raw = script;
-		firstScript = document.getElementsByTagName(&#x27;script&#x27;)[0];
+		firstScript = document.getElementsByTagName('script')[0];
 		firstScript.parentNode.insertBefore(script, firstScript);
 
 	});
@@ -2101,10 +2094,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">location = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2113,8 +2106,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2163,10 +2156,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mime = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2175,8 +2168,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2227,10 +2220,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 	var i, l, source, name;
 
 	if (!dest) { dest = {}; }
-	for (i = 1, l = arguments.length; i &#x3c; l; i += 1) {
+	for (i = 1, l = arguments.length; i &lt; l; i += 1) {
 		source = arguments[i];
 		for (name in source) {
-			if (!(name in dest) || (dest[name] !== source[name] &#x26;&#x26; (!(name in empty) || empty[name] !== source[name]))) {
+			if (!(name in dest) || (dest[name] !== source[name] &amp;&amp; (!(name in empty) || empty[name] !== source[name]))) {
 				dest[name] = source[name];
 			}
 		}
@@ -2256,29 +2249,29 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 
 		var options, clientRequest, client, url, headers, entity, response;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
-		url = response.url = request.path || &#x27;&#x27;;
+		url = response.url = request.path || '';
 		client = url.match(httpsExp) ? https : http;
 
 		options = mixin({}, request.mixin, parser.parse(url));
 
 		entity = request.entity;
-		request.method = request.method || (entity ? &#x27;POST&#x27; : &#x27;GET&#x27;);
+		request.method = request.method || (entity ? 'POST' : 'GET');
 		options.method = request.method;
 		headers = options.headers = {};
 		Object.keys(request.headers || {}).forEach(function (name) {
 			headers[normalizeHeaderName(name)] = request.headers[name];
 		});
-		if (!headers[&#x27;Content-Length&#x27;]) {
-			headers[&#x27;Content-Length&#x27;] = entity ? Buffer.byteLength(entity, &#x27;utf8&#x27;) : 0;
+		if (!headers['Content-Length']) {
+			headers['Content-Length'] = entity ? Buffer.byteLength(entity, 'utf8') : 0;
 		}
 
 		request.canceled = false;
@@ -2297,28 +2290,28 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 			};
 			response.status = {
 				code: clientResponse.statusCode
-				// node doesn&#x27;t provide access to the status text
+				// node doesn't provide access to the status text
 			};
 			response.headers = {};
 			Object.keys(clientResponse.headers).forEach(function (name) {
 				response.headers[normalizeHeaderName(name)] = clientResponse.headers[name];
 			});
 
-			clientResponse.on(&#x27;data&#x27;, function (data) {
+			clientResponse.on('data', function (data) {
 				// Collect the next Buffer chunk
 				buffers.push(data);
 			});
 
-			clientResponse.on(&#x27;end&#x27;, function () {
+			clientResponse.on('end', function () {
 				// Create the final response entity
-				response.entity = buffers.length &#x3e; 0 ? Buffer.concat(buffers).toString() : &#x27;&#x27;;
+				response.entity = buffers.length &gt; 0 ? Buffer.concat(buffers).toString() : '';
 				buffers = null;
 
 				resolve(response);
 			});
 		});
 
-		clientRequest.on(&#x27;error&#x27;, function (e) {
+		clientRequest.on('error', function (e) {
 			response.error = e;
 			reject(response);
 		});
@@ -2344,9 +2337,9 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function normalizeHeaderName(name) {
 	return name.toLowerCase()
-		.split(&#x27;-&#x27;)
+		.split('-')
 		.map(function (chunk) { return chunk.charAt(0).toUpperCase() + chunk.slice(1); })
-		.join(&#x27;-&#x27;);
+		.join('-');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2362,10 +2355,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">oAuth = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2374,8 +2367,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2424,10 +2417,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">params = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2436,8 +2429,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2486,10 +2479,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">pathPrefix = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2498,8 +2491,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2578,10 +2571,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">retry = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2590,8 +2583,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2655,7 +2648,7 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function setPlatformDefaultClient(client) {
 	if (platformDefault) {
-		throw new Error(&#x27;Unable to redefine platformDefaultClient&#x27;);
+		throw new Error('Unable to redefine platformDefaultClient');
 	}
 	target = platformDefault = client;
 }</pre></li>
@@ -2673,10 +2666,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">template = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2685,8 +2678,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2735,10 +2728,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">timeout = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -2747,8 +2740,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -2806,7 +2799,7 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		this._params = mixin({}, this._params, params);
 	}
 	else {
-		this._template = (template || &#x27;&#x27;).<span class="apidocCodeKeywordSpan">toString</span>();
+		this._template = (template || '').<span class="apidocCodeKeywordSpan">toString</span>();
 		this._params = params || {};
 	}
 }
@@ -2834,12 +2827,12 @@ UrlBuilder.prototype = {
 ```javascript
 var rest, mime, client;
 
-rest = require(&#x27;rest&#x27;),
-mime = require(&#x27;rest/interceptor/mime&#x27;);
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
 
 client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
-client({ path: &#x27;/data.json&#x27; }).then(function(response) {
-    console.log(&#x27;response: &#x27;, response);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
 });
 ```
 
@@ -2863,25 +2856,25 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 </span>
 		var client, method, url, headers, entity, headerName, response, XHR;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
 		XHR = request.engine || XMLHttpRequest;
 		if (!XHR) {
-			reject({ request: request, error: &#x27;xhr-not-available&#x27; });
+			reject({ request: request, error: 'xhr-not-available' });
 			return;
 		}
 
 		entity = request.entity;
-		request.method = request.method || (entity ? &#x27;POST&#x27; : &#x27;GET&#x27;);
+		request.method = request.method || (entity ? 'POST' : 'GET');
 		method = request.method;
-		url = response.url = request.path || &#x27;&#x27;;
+		url = response.url = request.path || '';
 
 		try {
 			client = response.raw = new XHR();
@@ -2895,7 +2888,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 			headers = request.headers;
 			for (headerName in headers) {
 				/*jshint forin:false */
-				if (headerName === &#x27;Content-Type&#x27; &#x26;&#x26; headers[headerName] === &#x27;multipart/form-data&#x27;) {
+				if (headerName === 'Content-Type' &amp;&amp; headers[headerName] === 'multipart/form-data') {
 					// XMLHttpRequest generates its own Content-Type header with the
 					// appropriate multipart boundary when sending multipart/form-data.
 					continue;
@@ -2927,7 +2920,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 						response.status.code = 204;
 					}
 
-					if (response.status.code &#x3e; 0) {
+					if (response.status.code &gt; 0) {
 						// check status code as readystatechange fires before error event
 						resolve(response);
 					}
@@ -2943,7 +2936,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 
 			try {
 				client.onerror = function (/* e */) {
-					response.error = &#x27;loaderror&#x27;;
+					response.error = 'loaderror';
 					reject(response);
 				};
 			}
@@ -2954,7 +2947,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 			client.send(entity);
 		}
 		catch (e) {
-			response.error = &#x27;loaderror&#x27;;
+			response.error = 'loaderror';
 			reject(response);
 		}
 
@@ -3022,7 +3015,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		this._params = mixin({}, this._params, params);
 	}
 	else {
-		this._template = (template || &#x27;&#x27;).toString();
+		this._template = (template || '').toString();
 		this._params = params || {};
 	}
 }</pre></li>
@@ -3052,10 +3045,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 	request: function (request, config) {
 		var path, params;
 
-		path = request.path || &#x27;&#x27;;
+		path = request.path || '';
 		params = request.params || {};
 
-		request.path = new UrlBuilder(path, config.params).<span class="apidocCodeKeywordSpan">append</span>(&#x27;&#x27;, params).build
+		request.path = new UrlBuilder(path, config.params).<span class="apidocCodeKeywordSpan">append</span>('', params).build
 ();
 		delete request.params;
 
@@ -3106,24 +3099,24 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">fullyQualify = function () {
-		if (typeof location === &#x27;undefined&#x27;) { return this; }
+		if (typeof location === 'undefined') { return this; }
 		if (this.isFullyQualified()) { return this; }
 
 		var template = this._template;
 
-		if (startsWith(template, &#x27;//&#x27;)) {
+		if (startsWith(template, '//')) {
 			template = origin.protocol + template;
 		}
-		else if (startsWith(template, &#x27;/&#x27;)) {
+		else if (startsWith(template, '/')) {
 			template = origin.origin + template;
 		}
 		else if (!this.isAbsolute()) {
-			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf(&#x27;/&#x27;) + 1);
+			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf('/') + 1);
 		}
 
-		if (template.indexOf(&#x27;/&#x27;, 8) === -1) {
-			// default the pathname to &#x27;/&#x27;
-			template = template + &#x27;/&#x27;;
+		if (template.indexOf('/', 8) === -1) {
+			// default the pathname to '/'
+			template = template + '/';
 		}
 
 		return new UrlBuilder(template, this._params);
@@ -3131,7 +3124,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <li>example usage<pre class="apidocCodePre">...
 	 * @see https://developer.mozilla.org/en-US/docs/DOM/window.location
 	 *
-	 * @returns {Object} a &#x27;window.location&#x27;-like object
+	 * @returns {Object} a 'window.location'-like object
 	 */
 	parts: function () {
 		/*jshint maxcomplexity:20 */
@@ -3140,10 +3133,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		parts = {
 			href: url[0],
 			protocol: url[1],
-			host: url[3] || &#x27;&#x27;,
-			hostname: url[4] || &#x27;&#x27;,
+			host: url[3] || '',
+			hostname: url[4] || '',
 			port: url[6],
-			pathname: url[7] || &#x27;&#x27;,
+			pathname: url[7] || '',
 ...</pre></li>
     </ul>
 
@@ -3161,19 +3154,19 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-		if (startsWith(template, &#x27;//&#x27;)) {
+		if (startsWith(template, '//')) {
 			template = origin.protocol + template;
 		}
-		else if (startsWith(template, &#x27;/&#x27;)) {
+		else if (startsWith(template, '/')) {
 			template = origin.origin + template;
 		}
 		else if (!this.<span class="apidocCodeKeywordSpan">isAbsolute</span>()) {
-			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf(&#x27;/&#x27;) + 1);
+			template = origin.origin + origin.pathname.substring(0, origin.pathname.lastIndexOf('/') + 1);
 		}
 
-		if (template.indexOf(&#x27;/&#x27;, 8) === -1) {
-			// default the pathname to &#x27;/&#x27;
-			template = template + &#x27;/&#x27;;
+		if (template.indexOf('/', 8) === -1) {
+			// default the pathname to '/'
+			template = template + '/';
 		}
 ...</pre></li>
     </ul>
@@ -3218,15 +3211,15 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 	 * @return {UrlBuilder} the fully qualified URL template
 	 */
 	fullyQualify: function () {
-		if (typeof location === &#x27;undefined&#x27;) { return this; }
+		if (typeof location === 'undefined') { return this; }
 		if (this.<span class="apidocCodeKeywordSpan">isFullyQualified</span>()) { return this; }
 
 		var template = this._template;
 
-		if (startsWith(template, &#x27;//&#x27;)) {
+		if (startsWith(template, '//')) {
 			template = origin.protocol + template;
 		}
-		else if (startsWith(template, &#x27;/&#x27;)) {
+		else if (startsWith(template, '/')) {
 ...</pre></li>
     </ul>
 
@@ -3246,15 +3239,15 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		parts = {
 			href: url[0],
 			protocol: url[1],
-			host: url[3] || &#x27;&#x27;,
-			hostname: url[4] || &#x27;&#x27;,
+			host: url[3] || '',
+			hostname: url[4] || '',
 			port: url[6],
-			pathname: url[7] || &#x27;&#x27;,
-			search: url[8] || &#x27;&#x27;,
-			hash: url[9] || &#x27;&#x27;
+			pathname: url[7] || '',
+			search: url[8] || '',
+			hash: url[9] || ''
 		};
-		parts.origin = parts.protocol + &#x27;//&#x27; + parts.host;
-		parts.port = parts.port || (parts.protocol === &#x27;https:&#x27; ? &#x27;443&#x27; : parts.protocol === &#x27;http:&#x27; ? &#x27;80&#x27; : &#x27;&#x27;);
+		parts.origin = parts.protocol + '//' + parts.host;
+		parts.port = parts.port || (parts.protocol === 'https:' ? '443' : parts.protocol === 'http:' ? '80' : '');
 		return parts;
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -3296,7 +3289,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		this._params = mixin({}, this._params, params);
 	}
 	else {
-		this._template = (template || &#x27;&#x27;).<span class="apidocCodeKeywordSpan">toString</span>();
+		this._template = (template || '').<span class="apidocCodeKeywordSpan">toString</span>();
 		this._params = params || {};
 	}
 }
@@ -3349,11 +3342,11 @@ UrlBuilder.prototype = {
     <li>description and source-code<pre class="apidocCodePre">function base64Decode(text) {
 
 	//ignore white space
-	text = text.replace(/\s/g, &#x27;&#x27;);
+	text = text.replace(/\s/g, '');
 
 	//first check for any unexpected input
-	if (!(/^[a-z0-9\+\/\s]+\={0,2}$/i.test(text)) || text.length % 4 &#x3e; 0) {
-		throw new Error(&#x27;Not a base64-encoded string.&#x27;);
+	if (!(/^[a-z0-9\+\/\s]+\={0,2}$/i.test(text)) || text.length % 4 &gt; 0) {
+		throw new Error('Not a base64-encoded string.');
 	}
 
 	//local variables
@@ -3362,10 +3355,10 @@ UrlBuilder.prototype = {
 		result = [];
 
 	//remove any equals signs
-	text = text.replace(/\=/g, &#x27;&#x27;);
+	text = text.replace(/\=/g, '');
 
 	//loop over each character
-	while (i &#x3c; text.length) {
+	while (i &lt; text.length) {
 
 		cur = digits.indexOf(text.charAt(i));
 		digitNum = i % 4;
@@ -3375,15 +3368,15 @@ UrlBuilder.prototype = {
 		//case 0: first digit - do nothing, not enough info to work with
 
 		case 1: //second digit
-			result.push(String.fromCharCode(prev &#x3c;&#x3c; 2 | cur &#x3e;&#x3e; 4));
+			result.push(String.fromCharCode(prev &lt;&lt; 2 | cur &gt;&gt; 4));
 			break;
 
 		case 2: //third digit
-			result.push(String.fromCharCode((prev &#x26; 0x0f) &#x3c;&#x3c; 4 | cur &#x3e;&#x3e; 2));
+			result.push(String.fromCharCode((prev &amp; 0x0f) &lt;&lt; 4 | cur &gt;&gt; 2));
 			break;
 
 		case 3: //fourth digit
-			result.push(String.fromCharCode((prev &#x26; 3) &#x3c;&#x3c; 6 | cur));
+			result.push(String.fromCharCode((prev &amp; 3) &lt;&lt; 6 | cur));
 			break;
 		}
 
@@ -3392,7 +3385,7 @@ UrlBuilder.prototype = {
 	}
 
 	//return a string
-	return result.join(&#x27;&#x27;);
+	return result.join('');
 
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -3426,30 +3419,30 @@ UrlBuilder.prototype = {
     <li>description and source-code<pre class="apidocCodePre">function base64Encode(text) {
 
 	if (/([^\u0000-\u00ff])/.test(text)) {
-		throw new Error(&#x27;Can\&#x27;t base64 encode non-ASCII characters.&#x27;);
+		throw new Error('Can\'t base64 encode non-ASCII characters.');
 	}
 
 	var i = 0,
 		cur, prev, byteNum,
 		result = [];
 
-	while (i &#x3c; text.length) {
+	while (i &lt; text.length) {
 
 		cur = text.charCodeAt(i);
 		byteNum = i % 3;
 
 		switch (byteNum) {
 		case 0: //first byte
-			result.push(digits.charAt(cur &#x3e;&#x3e; 2));
+			result.push(digits.charAt(cur &gt;&gt; 2));
 			break;
 
 		case 1: //second byte
-			result.push(digits.charAt((prev &#x26; 3) &#x3c;&#x3c; 4 | (cur &#x3e;&#x3e; 4)));
+			result.push(digits.charAt((prev &amp; 3) &lt;&lt; 4 | (cur &gt;&gt; 4)));
 			break;
 
 		case 2: //third byte
-			result.push(digits.charAt((prev &#x26; 0x0f) &#x3c;&#x3c; 2 | (cur &#x3e;&#x3e; 6)));
-			result.push(digits.charAt(cur &#x26; 0x3f));
+			result.push(digits.charAt((prev &amp; 0x0f) &lt;&lt; 2 | (cur &gt;&gt; 6)));
+			result.push(digits.charAt(cur &amp; 0x3f));
 			break;
 		}
 
@@ -3458,24 +3451,24 @@ UrlBuilder.prototype = {
 	}
 
 	if (byteNum === 0) {
-		result.push(digits.charAt((prev &#x26; 3) &#x3c;&#x3c; 4));
-		result.push(&#x27;==&#x27;);
+		result.push(digits.charAt((prev &amp; 3) &lt;&lt; 4));
+		result.push('==');
 	} else if (byteNum === 1) {
-		result.push(digits.charAt((prev &#x26; 0x0f) &#x3c;&#x3c; 2));
-		result.push(&#x27;=&#x27;);
+		result.push(digits.charAt((prev &amp; 0x0f) &lt;&lt; 2));
+		result.push('=');
 	}
 
-	return result.join(&#x27;&#x27;);
+	return result.join('');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 		var headers, username, password;
 
 		headers = request.headers || (request.headers = {});
 		username = request.username || config.username;
-		password = request.password || config.password || &#x27;&#x27;;
+		password = request.password || config.password || '';
 
 		if (username) {
-			headers.Authorization = &#x27;Basic &#x27; + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + &#x27;:&#x27
+			headers.Authorization = 'Basic ' + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + ':'
 ; + password);
 		}
 
@@ -3501,10 +3494,10 @@ UrlBuilder.prototype = {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">basicAuth = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -3513,8 +3506,8 @@ UrlBuilder.prototype = {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -3567,8 +3560,8 @@ UrlBuilder.prototype = {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -3584,7 +3577,7 @@ UrlBuilder.prototype = {
 - perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
 - add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
 - mime converters may return a promise. Thanks @phillipj
-- removed &#x27;rest/util/beget&#x27; favor Object.create
+- removed 'rest/util/beget' favor Object.create
 
 1.0.3
 - add moduleType for bower (node and amd). Thanks @briancavalier
@@ -3634,8 +3627,8 @@ UrlBuilder.prototype = {
 	 * @deprecated
 	 */
 	impl.chain = function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -3679,10 +3672,10 @@ UrlBuilder.prototype = {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">csrf = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -3691,8 +3684,8 @@ UrlBuilder.prototype = {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -3746,10 +3739,10 @@ UrlBuilder.prototype = {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">defaultRequest = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -3758,8 +3751,8 @@ UrlBuilder.prototype = {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -3839,10 +3832,10 @@ UrlBuilder.prototype = {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">entity = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -3851,8 +3844,8 @@ UrlBuilder.prototype = {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -3897,11 +3890,11 @@ UrlBuilder.prototype = {
 
 1.2.0
 - deprecated rest/interceptor/entity: instead use response.<span class="apidocCodeKeywordSpan">entity</span>()
-- deprecated and removed wire.js reference resolves &#x27;client!&#x27; and &#x27;resource!&#x27;, instead use the &#x27;rest/wire
-&#x27; factory
+- deprecated and removed wire.js reference resolves 'client!' and 'resource!', instead use the 'rest/wire
+' factory
 - deprecated and removed Dojo store support
-- separate browser and node main modules, browser consumers should switch their main module from &#x27;rest/rest&#x27; to &#x27;
-rest/browser&#x27;. This allows tools such as browerify and webpack to more intelligently reason about the module structure.
+- separate browser and node main modules, browser consumers should switch their main module from 'rest/rest' to '
+rest/browser'. This allows tools such as browerify and webpack to more intelligently reason about the module structure.
 - Multipart requests for browsers that support FormData (sorry IE 6-9). Thanks @mjackson
 - mixin property support in defaultRequest interceptor. Thanks @jiangtyd
 - allow location interceptor to be applied based on the status code. Thanks @phillipj
@@ -3925,10 +3918,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">errorCode = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -3937,8 +3930,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -3991,7 +3984,7 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function findProperties(obj, prop, callback) {
-		if (typeof obj !== &#x27;object&#x27; || obj === null) { return; }
+		if (typeof obj !== 'object' || obj === null) { return; }
 		if (prop in obj) {
 			callback(obj[prop], obj, prop);
 		}
@@ -4002,16 +3995,16 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <li>example usage<pre class="apidocCodePre">...
 		}
 
-		if (response.headers &#x26;&#x26; response.headers.Link) {
+		if (response.headers &amp;&amp; response.headers.Link) {
 			response.links = response.links || {};
 			apply(response.links, parseLinkHeaders(response.headers.Link));
 		}
 
-		find.<span class="apidocCodeKeywordSpan">findProperties</span>(response.entity, &#x27;links&#x27;, function (obj, host) {
+		find.<span class="apidocCodeKeywordSpan">findProperties</span>(response.entity, 'links', function (obj, host) {
 			var target;
 
 			if (Array.isArray(host.links)) {
-				if (config.target === &#x27;&#x27;) {
+				if (config.target === '') {
 					target = host;
 				}
 				else {
@@ -4054,10 +4047,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">hateoas = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4066,8 +4059,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4136,10 +4129,10 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 
 	return function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4148,8 +4141,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4199,7 +4192,7 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ComplexRequest(properties) {
 	if (!(this instanceof ComplexRequest)) {
-		// in case users forget the &#x27;new&#x27; don&#x27;t mix into the interceptor
+		// in case users forget the 'new' don't mix into the interceptor
 		return new ComplexRequest(properties);
 	}
 	mixin(this, properties);
@@ -4242,19 +4235,19 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 
 		var callbackName, callbackParams, script, firstScript, response;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
 		request.callback = request.callback || {};
-		callbackName = registerCallback(request.callback.prefix || &#x27;jsonp&#x27;, resolve, response, request.callback.name);
+		callbackName = registerCallback(request.callback.prefix || 'jsonp', resolve, response, request.callback.name);
 		callbackParams = {};
-		callbackParams[request.callback.param || &#x27;callback&#x27;] = callbackName;
+		callbackParams[request.callback.param || 'callback'] = callbackName;
 
 		request.canceled = false;
 		request.cancel = function cancel() {
@@ -4263,14 +4256,14 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 			reject(response);
 		};
 
-		script = document.createElement(&#x27;script&#x27;);
-		script.type = &#x27;text/javascript&#x27;;
+		script = document.createElement('script');
+		script.type = 'text/javascript';
 		script.async = true;
 		script.src = response.url = new UrlBuilder(request.path, callbackParams).build();
 
 		function handlePossibleError() {
-			if (typeof window[callbackName] === &#x27;function&#x27;) {
-				response.error = &#x27;loaderror&#x27;;
+			if (typeof window[callbackName] === 'function') {
+				response.error = 'loaderror';
 				clearProperty(window, callbackName);
 				cleanupScriptNode(response);
 				reject(response);
@@ -4282,13 +4275,13 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 		script.onload = script.onreadystatechange = function (e) {
 			// script tag load callbacks are completely non-standard
 			// handle case where onreadystatechange is fired for an error instead of onerror
-			if ((e &#x26;&#x26; (e.type === &#x27;load&#x27; || e.type === &#x27;error&#x27;)) || script.readyState === &#x27;loaded&#x27;) {
+			if ((e &amp;&amp; (e.type === 'load' || e.type === 'error')) || script.readyState === 'loaded') {
 				handlePossibleError();
 			}
 		};
 
 		response.raw = script;
-		firstScript = document.getElementsByTagName(&#x27;script&#x27;)[0];
+		firstScript = document.getElementsByTagName('script')[0];
 		firstScript.parentNode.insertBefore(script, firstScript);
 
 	});
@@ -4306,8 +4299,8 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -4323,7 +4316,7 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 - perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
 - add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
 - mime converters may return a promise. Thanks @phillipj
-- removed &#x27;rest/util/beget&#x27; favor Object.create
+- removed 'rest/util/beget' favor Object.create
 
 1.0.3
 - add moduleType for bower (node and amd). Thanks @briancavalier
@@ -4348,12 +4341,12 @@ rest/browser&#x27;. This allows tools such as browerify and webpack to more inte
 ```javascript
 var rest, mime, client;
 
-rest = require(&#x27;rest&#x27;),
-mime = require(&#x27;rest/interceptor/mime&#x27;);
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
 
 client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
-client({ path: &#x27;/data.json&#x27; }).then(function(response) {
-    console.log(&#x27;response: &#x27;, response);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
 });
 ```
 
@@ -4418,10 +4411,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">location = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4430,8 +4423,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4485,10 +4478,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mime = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4497,8 +4490,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4554,10 +4547,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 	var i, l, source, name;
 
 	if (!dest) { dest = {}; }
-	for (i = 1, l = arguments.length; i &#x3c; l; i += 1) {
+	for (i = 1, l = arguments.length; i &lt; l; i += 1) {
 		source = arguments[i];
 		for (name in source) {
-			if (!(name in dest) || (dest[name] !== source[name] &#x26;&#x26; (!(name in empty) || empty[name] !== source[name]))) {
+			if (!(name in dest) || (dest[name] !== source[name] &amp;&amp; (!(name in empty) || empty[name] !== source[name]))) {
 				dest[name] = source[name];
 			}
 		}
@@ -4588,29 +4581,29 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 
 		var options, clientRequest, client, url, headers, entity, response;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
-		url = response.url = request.path || &#x27;&#x27;;
+		url = response.url = request.path || '';
 		client = url.match(httpsExp) ? https : http;
 
 		options = mixin({}, request.mixin, parser.parse(url));
 
 		entity = request.entity;
-		request.method = request.method || (entity ? &#x27;POST&#x27; : &#x27;GET&#x27;);
+		request.method = request.method || (entity ? 'POST' : 'GET');
 		options.method = request.method;
 		headers = options.headers = {};
 		Object.keys(request.headers || {}).forEach(function (name) {
 			headers[normalizeHeaderName(name)] = request.headers[name];
 		});
-		if (!headers[&#x27;Content-Length&#x27;]) {
-			headers[&#x27;Content-Length&#x27;] = entity ? Buffer.byteLength(entity, &#x27;utf8&#x27;) : 0;
+		if (!headers['Content-Length']) {
+			headers['Content-Length'] = entity ? Buffer.byteLength(entity, 'utf8') : 0;
 		}
 
 		request.canceled = false;
@@ -4629,28 +4622,28 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 			};
 			response.status = {
 				code: clientResponse.statusCode
-				// node doesn&#x27;t provide access to the status text
+				// node doesn't provide access to the status text
 			};
 			response.headers = {};
 			Object.keys(clientResponse.headers).forEach(function (name) {
 				response.headers[normalizeHeaderName(name)] = clientResponse.headers[name];
 			});
 
-			clientResponse.on(&#x27;data&#x27;, function (data) {
+			clientResponse.on('data', function (data) {
 				// Collect the next Buffer chunk
 				buffers.push(data);
 			});
 
-			clientResponse.on(&#x27;end&#x27;, function () {
+			clientResponse.on('end', function () {
 				// Create the final response entity
-				response.entity = buffers.length &#x3e; 0 ? Buffer.concat(buffers).toString() : &#x27;&#x27;;
+				response.entity = buffers.length &gt; 0 ? Buffer.concat(buffers).toString() : '';
 				buffers = null;
 
 				resolve(response);
 			});
 		});
 
-		clientRequest.on(&#x27;error&#x27;, function (e) {
+		clientRequest.on('error', function (e) {
 			response.error = e;
 			reject(response);
 		});
@@ -4675,8 +4668,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -4692,7 +4685,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 - perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
 - add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
 - mime converters may return a promise. Thanks @phillipj
-- removed &#x27;rest/util/beget&#x27; favor Object.create
+- removed 'rest/util/beget' favor Object.create
 
 1.0.3
 - add moduleType for bower (node and amd). Thanks @briancavalier
@@ -4717,12 +4710,12 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 ```javascript
 var rest, mime, client;
 
-rest = require(&#x27;rest&#x27;),
-mime = require(&#x27;rest/interceptor/mime&#x27;);
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
 
 client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
-client({ path: &#x27;/data.json&#x27; }).then(function(response) {
-    console.log(&#x27;response: &#x27;, response);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
 });
 ```
 
@@ -4747,9 +4740,9 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function normalizeHeaderName(name) {
 	return name.toLowerCase()
-		.split(&#x27;-&#x27;)
+		.split('-')
 		.map(function (chunk) { return chunk.charAt(0).toUpperCase() + chunk.slice(1); })
-		.join(&#x27;-&#x27;);
+		.join('-');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4770,10 +4763,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">oAuth = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4782,8 +4775,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4837,10 +4830,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">params = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4849,8 +4842,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4904,10 +4897,10 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     <ul>
     <li>description and source-code<pre class="apidocCodePre">pathPrefix = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -4916,8 +4909,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -4983,12 +4976,12 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 	} while (m);
 
 	/*jshint camelcase:false */
-	pubsub.<span class="apidocCodeKeywordSpan">publish</span>(params.state, params.token_type + &#x27; &#x27; + params.access_token
+	pubsub.<span class="apidocCodeKeywordSpan">publish</span>(params.state, params.token_type + ' ' + params.access_token
 );
 }
 
 function defaultWindowStrategy(url) {
-	var w = window.open(url, &#x27;_blank&#x27;, &#x27;width=500,height=400&#x27;);
+	var w = window.open(url, '_blank', 'width=500,height=400');
 	return function () {
 		w.close();
 	};
@@ -5008,9 +5001,9 @@ function defaultWindowStrategy(url) {
 	topics[topic] = callback;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-			&#x27;client_id&#x27;: config.clientId,
-			&#x27;scope&#x27;: config.scope,
-			&#x27;state&#x27;: state
+			'client_id': config.clientId,
+			'scope': config.scope,
+			'state': state
 		});
 
 		dismissWindow = config.windowStrategy(url);
@@ -5072,13 +5065,13 @@ function defaultWindowStrategy(url) {
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 // include provided serializers
-registry.register(&#x27;application/hal&#x27;, require(&#x27;./type/application/hal&#x27;));
-registry.register(&#x27;application/json&#x27;, require(&#x27;./type/application/json&#x27;));
-registry.register(&#x27;application/x-www-form-urlencoded&#x27;, require(&#x27;./type/application/x-www-form-urlencoded&#x27;));
-registry.register(&#x27;multipart/form-data&#x27;, require(&#x27;./type/multipart/form-data&#x27;));
-registry.register(&#x27;text/plain&#x27;, require(&#x27;./type/text/plain&#x27;));
+registry.register('application/hal', require('./type/application/hal'));
+registry.register('application/json', require('./type/application/json'));
+registry.register('application/x-www-form-urlencoded', require('./type/application/x-www-form-urlencoded'));
+registry.register('multipart/form-data', require('./type/multipart/form-data'));
+registry.register('text/plain', require('./type/text/plain'));
 
-registry.register(&#x27;+json&#x27;, registry.<span class="apidocCodeKeywordSpan">delegate</span>(&#x27;application/json&#x27;));
+registry.register('+json', registry.<span class="apidocCodeKeywordSpan">delegate</span>('application/json'));
 
 module.exports = registry;
 ...</pre></li>
@@ -5096,7 +5089,7 @@ module.exports = registry;
     <li>description and source-code<pre class="apidocCodePre">function lookup(type) {
 		var parsed;
 
-		parsed = typeof type === &#x27;string&#x27; ? mime.parse(type) : type;
+		parsed = typeof type === 'string' ? mime.parse(type) : type;
 
 		if (mimes[parsed.raw]) {
 			return mimes[parsed.raw];
@@ -5111,22 +5104,22 @@ module.exports = registry;
 			return mimes[parsed.suffix];
 		}
 
-		return Promise.reject(new Error(&#x27;Unable to locate converter for mime &#x22;&#x27; + parsed.raw + &#x27;&#x22;&#x27;));
+		return Promise.reject(new Error('Unable to locate converter for mime "' + parsed.raw + '"'));
 	}</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-		if (!(&#x27;entity&#x27; in request)) {
+		if (!('entity' in request)) {
 			return request;
 		}
 
-		headers[&#x27;Content-Type&#x27;] = type.raw;
+		headers['Content-Type'] = type.raw;
 
-		return config.registry.<span class="apidocCodeKeywordSpan">lookup</span>(type)[&#x27;catch&#x27;](function () {
+		return config.registry.<span class="apidocCodeKeywordSpan">lookup</span>(type)['catch'](function () {
 			// failed to resolve converter
 			if (config.permissive) {
 				return noopConverter;
 			}
-			throw &#x27;mime-unknown&#x27;;
+			throw 'mime-unknown';
 		}).then(function (converter) {
 			var client = config.client || request.originator,
 ...</pre></li>
@@ -5151,9 +5144,9 @@ module.exports = registry;
 ### Custom MIME Converters: ###
 
 ```javascript
-var registry = require(&#x27;rest/mime/registry&#x27;);
+var registry = require('rest/mime/registry');
 
-registry.<span class="apidocCodeKeywordSpan">register</span>(&#x27;application/vnd.com.example&#x27;, {
+registry.<span class="apidocCodeKeywordSpan">register</span>('application/vnd.com.example', {
 read: function(str) {
     var obj;
     // do string to object conversions
@@ -5237,18 +5230,18 @@ write: function(obj) {
 	return make(new Promise(func));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
- * @param {string} [request.callback.name=&#x3c;generated&#x3e;] pins the name of the
- *   callback function, useful for cases where the server doesn&#x27;t allow
+ * @param {string} [request.callback.name=&lt;generated&gt;] pins the name of the
+ *   callback function, useful for cases where the server doesn't allow
  *   custom callback names. Generally not recommended.
  *
- * @returns {Promise&#x3c;Response&#x3e;}
+ * @returns {Promise&lt;Response&gt;}
  */
 module.exports = client(function jsonp(request) {
 	return responsePromise.<span class="apidocCodeKeywordSpan">promise</span>(function (resolve, reject) {
 
 		var callbackName, callbackParams, script, firstScript, response;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
@@ -5274,7 +5267,7 @@ module.exports = interceptor({
 		return config;
 	},
 	response: function (response, config) {
-		if (response.status &#x26;&#x26; response.status.code &#x3e;= config.code) {
+		if (response.status &amp;&amp; response.status.code &gt;= config.code) {
 			return Promise.<span class="apidocCodeKeywordSpan">reject</span>(response);
 		}
 		return response;
@@ -5299,10 +5292,10 @@ module.exports = interceptor({
     <ul>
     <li>description and source-code<pre class="apidocCodePre">retry = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -5311,8 +5304,8 @@ module.exports = interceptor({
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -5370,23 +5363,23 @@ module.exports = interceptor({
 
     switch (expected.length) {
       case 0:
-        expectedHumanized = &#x22;end of input&#x22;;
+        expectedHumanized = "end of input";
         break;
       case 1:
         expectedHumanized = expected[0];
         break;
       default:
-        expectedHumanized = expected.slice(0, expected.length - 1).join(&#x22;, &#x22;)
-          + &#x22; or &#x22;
+        expectedHumanized = expected.slice(0, expected.length - 1).join(", ")
+          + " or "
           + expected[expected.length - 1];
     }
 
-    foundHumanized = found ? quote(found) : &#x22;end of input&#x22;;
+    foundHumanized = found ? quote(found) : "end of input";
 
-    return &#x22;Expected &#x22; + expectedHumanized + &#x22; but &#x22; + foundHumanized + &#x22; found.&#x22;;
+    return "Expected " + expectedHumanized + " but " + foundHumanized + " found.";
   }
 
-  this.name = &#x22;SyntaxError&#x22;;
+  this.name = "SyntaxError";
   this.expected = expected;
   this.found = found;
   this.message = buildMessage(expected, found);
@@ -5399,7 +5392,7 @@ module.exports = interceptor({
  */
 if (result === null || pos !== input.length) {
   var offset = Math.max(pos, rightmostFailuresPos);
-  var found = offset &#x3c; input.length ? input.charAt(offset) : null;
+  var found = offset &lt; input.length ? input.charAt(offset) : null;
   var errorPosition = computeErrorPosition();
 
   throw new this.<span class="apidocCodeKeywordSpan">SyntaxError</span>(
@@ -5424,35 +5417,35 @@ if (result === null || pos !== input.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">parse = function (input, startRule) {
   var parseFunctions = {
-    &#x22;start&#x22;: parse_start,
-    &#x22;LinkValue&#x22;: parse_LinkValue,
-    &#x22;LinkParams&#x22;: parse_LinkParams,
-    &#x22;URIReference&#x22;: parse_URIReference,
-    &#x22;LinkParam&#x22;: parse_LinkParam,
-    &#x22;LinkParamName&#x22;: parse_LinkParamName,
-    &#x22;LinkParamValue&#x22;: parse_LinkParamValue,
-    &#x22;PToken&#x22;: parse_PToken,
-    &#x22;PTokenChar&#x22;: parse_PTokenChar,
-    &#x22;OptionalSP&#x22;: parse_OptionalSP,
-    &#x22;QuotedString&#x22;: parse_QuotedString,
-    &#x22;QuotedStringInternal&#x22;: parse_QuotedStringInternal,
-    &#x22;Char&#x22;: parse_Char,
-    &#x22;UpAlpha&#x22;: parse_UpAlpha,
-    &#x22;LoAlpha&#x22;: parse_LoAlpha,
-    &#x22;Alpha&#x22;: parse_Alpha,
-    &#x22;Digit&#x22;: parse_Digit,
-    &#x22;SP&#x22;: parse_SP,
-    &#x22;DQ&#x22;: parse_DQ,
-    &#x22;QDText&#x22;: parse_QDText,
-    &#x22;QuotedPair&#x22;: parse_QuotedPair
+    "start": parse_start,
+    "LinkValue": parse_LinkValue,
+    "LinkParams": parse_LinkParams,
+    "URIReference": parse_URIReference,
+    "LinkParam": parse_LinkParam,
+    "LinkParamName": parse_LinkParamName,
+    "LinkParamValue": parse_LinkParamValue,
+    "PToken": parse_PToken,
+    "PTokenChar": parse_PTokenChar,
+    "OptionalSP": parse_OptionalSP,
+    "QuotedString": parse_QuotedString,
+    "QuotedStringInternal": parse_QuotedStringInternal,
+    "Char": parse_Char,
+    "UpAlpha": parse_UpAlpha,
+    "LoAlpha": parse_LoAlpha,
+    "Alpha": parse_Alpha,
+    "Digit": parse_Digit,
+    "SP": parse_SP,
+    "DQ": parse_DQ,
+    "QDText": parse_QDText,
+    "QuotedPair": parse_QuotedPair
   };
 
   if (startRule !== undefined) {
     if (parseFunctions[startRule] === undefined) {
-      throw new Error(&#x22;Invalid rule name: &#x22; + quote(startRule) + &#x22;.&#x22;);
+      throw new Error("Invalid rule name: " + quote(startRule) + ".");
     }
   } else {
-    startRule = &#x22;start&#x22;;
+    startRule = "start";
   }
 
   var pos = 0;
@@ -5464,7 +5457,7 @@ if (result === null || pos !== input.length) {
     var result = input;
 
     var padLength = length - input.length;
-    for (var i = 0; i &#x3c; padLength; i++) {
+    for (var i = 0; i &lt; padLength; i++) {
       result = padding + result;
     }
 
@@ -5476,23 +5469,23 @@ if (result === null || pos !== input.length) {
     var escapeChar;
     var length;
 
-    if (charCode &#x3c;= 0xFF) {
-      escapeChar = &#x27;x&#x27;;
+    if (charCode &lt;= 0xFF) {
+      escapeChar = 'x';
       length = 2;
     } else {
-      escapeChar = &#x27;u&#x27;;
+      escapeChar = 'u';
       length = 4;
     }
 
-    return &#x27;\\&#x27; + escapeChar + padLeft(charCode.toString(16).toUpperCase(), &#x27;0&#x27;, length);
+    return '\\' + escapeChar + padLeft(charCode.toString(16).toUpperCase(), '0', length);
   }
 
   function matchFailed(failure) {
-    if (pos &#x3c; rightmostFailuresPos) {
+    if (pos &lt; rightmostFailuresPos) {
       return;
     }
 
-    if (pos &#x3e; rightmostFailuresPos) {
+    if (pos &gt; rightmostFailuresPos) {
       rightmostFailuresPos = pos;
       rightmostFailuresExpected = [];
     }
@@ -5514,12 +5507,12 @@ if (result === null || pos !== input.length) {
       result2 = parse_OptionalSP();
       if (result2 !== null) {
         if (input.charCodeAt(pos) === 44) {
-          result3 = &#x22;,&#x22;;
+          result3 = ",";
           pos++;
         } else {
           result3 = null;
           if (reportFailures === 0) {
-            matchFailed(&#x22;\&#x22;,\&#x22;&#x22;);
+            matchFailed("\",\"");
           }
         }
         if (result3 !== null) {
@@ -5557,12 +5550,12 @@ if (result === null || pos !== input.length) {
         result2 = parse_OptionalSP();
         if (result2 !== null) {
           if (input.charCodeAt(pos) === 44) {
-            result3 = &#x22;,&#x22;;
+            result3 = ",";
             pos++;
           } else {
             result3 = null;
             if (reportFailures === 0) {
-              matchFailed(&#x22;\&#x22;,\&#x22;&#x22;);
+              matchFailed("\",\"");
             }
           }
           if (result3 !== null) {
@@ -5593,13 +5586,13 @@ if (result === null || pos !== input.length) {
 			return;
 		}
 
-		url = response.url = request.path || &#x27;&#x27;;
+		url = response.url = request.path || '';
 		client = url.match(httpsExp) ? https : http;
 
 		options = mixin({}, request.mixin, parser.<span class="apidocCodeKeywordSpan">parse</span>(url));
 
 		entity = request.entity;
-		request.method = request.method || (entity ? &#x27;POST&#x27; : &#x27;GET&#x27;);
+		request.method = request.method || (entity ? 'POST' : 'GET');
 		options.method = request.method;
 		headers = options.headers = {};
 		Object.keys(request.headers || {}).forEach(function (name) {
@@ -5656,7 +5649,7 @@ if (result === null || pos !== input.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function setPlatformDefaultClient(client) {
 	if (platformDefault) {
-		throw new Error(&#x27;Unable to redefine platformDefaultClient&#x27;);
+		throw new Error('Unable to redefine platformDefaultClient');
 	}
 	target = platformDefault = client;
 }</pre></li>
@@ -5679,10 +5672,10 @@ if (result === null || pos !== input.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">template = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -5691,8 +5684,8 @@ if (result === null || pos !== input.length) {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -5746,10 +5739,10 @@ if (result === null || pos !== input.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">timeout = function (target, config) {
 
-		if (typeof target === &#x27;object&#x27;) {
+		if (typeof target === 'object') {
 			config = target;
 		}
-		if (typeof target !== &#x27;function&#x27;) {
+		if (typeof target !== 'function') {
 			target = handlers.client || defaultClient;
 		}
 
@@ -5758,8 +5751,8 @@ if (result === null || pos !== input.length) {
 		function interceptedClient(request) {
 			var context, meta;
 			context = {};
-			meta = { &#x27;arguments&#x27;: Array.prototype.slice.call(arguments), client: interceptedClient };
-			request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+			meta = { 'arguments': Array.prototype.slice.call(arguments), client: interceptedClient };
+			request = typeof request === 'string' ? { path: request } : request || {};
 			request.originator = request.originator || interceptedClient;
 			return responsePromise(
 				requestHandler.call(context, request, config, meta),
@@ -5820,7 +5813,7 @@ if (result === null || pos !== input.length) {
 		this._params = mixin({}, this._params, params);
 	}
 	else {
-		this._template = (template || &#x27;&#x27;).<span class="apidocCodeKeywordSpan">toString</span>();
+		this._template = (template || '').<span class="apidocCodeKeywordSpan">toString</span>();
 		this._params = params || {};
 	}
 }
@@ -5884,10 +5877,10 @@ UrlBuilder.prototype = {
 
 		headers = request.headers || (request.headers = {});
 		username = request.username || config.username;
-		password = request.password || config.password || &#x27;&#x27;;
+		password = request.password || config.password || '';
 
 		if (username) {
-			headers.Authorization = &#x27;Basic &#x27; + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + &#x27;:&#x27
+			headers.Authorization = 'Basic ' + base64.<span class="apidocCodeKeywordSpan">encode</span>(username + ':'
 ; + password);
 		}
 
@@ -6049,17 +6042,17 @@ UrlBuilder.prototype = {
     <li>description and source-code<pre class="apidocCodePre">function expandTemplate(template, params) {
 	var start, end, uri;
 
-	uri = &#x27;&#x27;;
+	uri = '';
 	end = 0;
 	while (true) {
-		start = template.indexOf(&#x27;{&#x27;, end);
+		start = template.indexOf('{', end);
 		if (start === -1) {
 			// no more expressions
 			uri += template.slice(end);
 			break;
 		}
 		uri += template.slice(end, start);
-		end = template.indexOf(&#x27;}&#x27;, start) + 1;
+		end = template.indexOf('}', start) + 1;
 		uri += expandExpression(template.slice(start + 1, end - 1), params);
 	}
 
@@ -6104,12 +6097,12 @@ UrlBuilder.prototype = {
 ```javascript
 var rest, mime, client;
 
-rest = require(&#x27;rest&#x27;),
-mime = require(&#x27;rest/interceptor/mime&#x27;);
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
 
 client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
-client({ path: &#x27;/data.json&#x27; }).then(function(response) {
-    console.log(&#x27;response: &#x27;, response);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
 });
 ```
 
@@ -6138,25 +6131,25 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 </span>
 		var client, method, url, headers, entity, headerName, response, XHR;
 
-		request = typeof request === &#x27;string&#x27; ? { path: request } : request || {};
+		request = typeof request === 'string' ? { path: request } : request || {};
 		response = { request: request };
 
 		if (request.canceled) {
-			response.error = &#x27;precanceled&#x27;;
+			response.error = 'precanceled';
 			reject(response);
 			return;
 		}
 
 		XHR = request.engine || XMLHttpRequest;
 		if (!XHR) {
-			reject({ request: request, error: &#x27;xhr-not-available&#x27; });
+			reject({ request: request, error: 'xhr-not-available' });
 			return;
 		}
 
 		entity = request.entity;
-		request.method = request.method || (entity ? &#x27;POST&#x27; : &#x27;GET&#x27;);
+		request.method = request.method || (entity ? 'POST' : 'GET');
 		method = request.method;
-		url = response.url = request.path || &#x27;&#x27;;
+		url = response.url = request.path || '';
 
 		try {
 			client = response.raw = new XHR();
@@ -6170,7 +6163,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 			headers = request.headers;
 			for (headerName in headers) {
 				/*jshint forin:false */
-				if (headerName === &#x27;Content-Type&#x27; &#x26;&#x26; headers[headerName] === &#x27;multipart/form-data&#x27;) {
+				if (headerName === 'Content-Type' &amp;&amp; headers[headerName] === 'multipart/form-data') {
 					// XMLHttpRequest generates its own Content-Type header with the
 					// appropriate multipart boundary when sending multipart/form-data.
 					continue;
@@ -6202,7 +6195,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 						response.status.code = 204;
 					}
 
-					if (response.status.code &#x3e; 0) {
+					if (response.status.code &gt; 0) {
 						// check status code as readystatechange fires before error event
 						resolve(response);
 					}
@@ -6218,7 +6211,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 
 			try {
 				client.onerror = function (/* e */) {
-					response.error = &#x27;loaderror&#x27;;
+					response.error = 'loaderror';
 					reject(response);
 				};
 			}
@@ -6229,7 +6222,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 			client.send(entity);
 		}
 		catch (e) {
-			response.error = &#x27;loaderror&#x27;;
+			response.error = 'loaderror';
 			reject(response);
 		}
 
@@ -6248,8 +6241,8 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chain() {
-		if (typeof console !== &#x27;undefined&#x27;) {
-			console.log(&#x27;rest.js: client.chain() is deprecated, use client.wrap() instead&#x27;);
+		if (typeof console !== 'undefined') {
+			console.log('rest.js: client.chain() is deprecated, use client.wrap() instead');
 		}
 
 		return impl.wrap.apply(this, arguments);
@@ -6265,7 +6258,7 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 - perfer `client.wrap()` to `client.<span class="apidocCodeKeywordSpan">chain</span>()`, `chain` is now deprecated
 - add HTTP specific methods to the promises returned from clients: .entity(), .status(), .headers(), .header(name)
 - mime converters may return a promise. Thanks @phillipj
-- removed &#x27;rest/util/beget&#x27; favor Object.create
+- removed 'rest/util/beget' favor Object.create
 
 1.0.3
 - add moduleType for bower (node and amd). Thanks @briancavalier
@@ -6290,12 +6283,12 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
 ```javascript
 var rest, mime, client;
 
-rest = require(&#x27;rest&#x27;),
-mime = require(&#x27;rest/interceptor/mime&#x27;);
+rest = require('rest'),
+mime = require('rest/interceptor/mime');
 
 client = rest.<span class="apidocCodeKeywordSpan">wrap</span>(mime);
-client({ path: &#x27;/data.json&#x27; }).then(function(response) {
-    console.log(&#x27;response: &#x27;, response);
+client({ path: '/data.json' }).then(function(response) {
+    console.log('response: ', response);
 });
 ```
 
@@ -6313,3 +6306,4 @@ Before an interceptor can be used, it needs to be configured.  In this case, we 
     ]
 </div>
 </div>
+</body></html>
