@@ -1,4 +1,7 @@
-# api documentation for  [rest (v2.0.0)](https://github.com/cujojs/rest#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-rest.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rest) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rest.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rest)
+# npmdoc-rest
+
+#### basic api documentation for  [rest (v2.0.0)](https://github.com/cujojs/rest#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-rest.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-rest) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-rest.svg)](https://travis-ci.org/npmdoc/node-npmdoc-rest)
+
 #### RESTful HTTP client library
 
 [![NPM](https://nodei.co/npm/rest.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/rest)
@@ -84,7 +87,8 @@
         "test": "npm run-script lint && npm run-script buster",
         "tunnel": "sauceme -m"
     },
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
 
